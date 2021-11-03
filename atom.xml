@@ -6,7 +6,7 @@
   <link href="https://oceanyouth.github.io/atom.xml" rel="self"/>
   
   <link href="https://oceanyouth.github.io/"/>
-  <updated>2021-11-03T04:48:46.238Z</updated>
+  <updated>2021-11-03T07:25:12.718Z</updated>
   <id>https://oceanyouth.github.io/</id>
   
   <author>
@@ -15,44 +15,6 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>Page template</title>
-    <link href="https://oceanyouth.github.io/2021/11/03/Page%20template/"/>
-    <id>https://oceanyouth.github.io/2021/11/03/Page%20template/</id>
-    <published>2021-11-02T16:00:00.000Z</published>
-    <updated>2021-11-03T04:48:46.238Z</updated>
-    
-    <content type="html"><![CDATA[<!--html注释--><h1 id="你是水"><a href="#你是水" class="headerlink" title="你是水"></a>你是水</h1><h1 id="你是山"><a href="#你是山" class="headerlink" title="你是山"></a>你是山</h1><h2 id="你是人"><a href="#你是人" class="headerlink" title="你是人"></a>你是人</h2><h2 id="天地人"><a href="#天地人" class="headerlink" title="天地人"></a>天地人</h2>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;!--html注释--&gt;
-&lt;h1 id=&quot;你是水&quot;&gt;&lt;a href=&quot;#你是水&quot; class=&quot;headerlink&quot; title=&quot;你是水&quot;&gt;&lt;/a&gt;你是水&lt;/h1&gt;&lt;h1 id=&quot;你是山&quot;&gt;&lt;a href=&quot;#你是山&quot; class=&quot;headerlink&quot; title=&quot;你</summary>
-      
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Post template</title>
-    <link href="https://oceanyouth.github.io/2021/11/03/Post%20template/"/>
-    <id>https://oceanyouth.github.io/2021/11/03/Post%20template/</id>
-    <published>2021-11-02T16:00:00.000Z</published>
-    <updated>2021-11-03T07:24:47.494Z</updated>
-    
-    <content type="html"><![CDATA[<!--html注释--><h1 id="你是水"><a href="#你是水" class="headerlink" title="你是水"></a>你是水</h1><h1 id="你是山"><a href="#你是山" class="headerlink" title="你是山"></a>你是山</h1><h2 id="你是人"><a href="#你是人" class="headerlink" title="你是人"></a>你是人</h2><h2 id="天地人"><a href="#天地人" class="headerlink" title="天地人"></a>天地人</h2>]]></content>
-    
-    
-    <summary type="html">这是一篇个人随想。#【可选】页面描述</summary>
-    
-    
-    
-    
-  </entry>
   
   <entry>
     <title>博客初体验</title>
