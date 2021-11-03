@@ -1,0 +1,15 @@
+#footer {
+    position: relative;
+    background: transparent;
+    background-attachment: local;
+    background-position: bottom;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+}
+#footer-wrap {
+    position: relative;
+    padding: 2rem 1rem;
+    color: rgb(0, 0, 0);
+    text-align: center;
+}
