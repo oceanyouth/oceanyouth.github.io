@@ -1,0 +1,625 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>海与少年 | 海与少年</title><meta name="keywords" content="少年 海 博客"><meta name="author" content="oceanyouth"><meta name="copyright" content="oceanyouth"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Matlab 文件命名规则1、文件名命名要用英文字符，第一个字符不能是数字和下划线。 2、文件名不要取为matlab的一个固有函数,m文件名的命名尽量不要是简单的英文单词，最好是由大小写英文、数字、下划线等组成。原因是简单的单词命名容易与matlab内部函数名同名，结果会出现一些莫名其妙的错误。3、文件存储路径一定为英文。4、m文件起名不能有空格，如three phase，应该写成three_ph">
+<meta property="og:type" content="website">
+<meta property="og:title" content="海与少年">
+<meta property="og:url" content="https://oceanyouth.github.io/draft/20211129_MATLAB%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7.html">
+<meta property="og:site_name" content="海与少年">
+<meta property="og:description" content="Matlab 文件命名规则1、文件名命名要用英文字符，第一个字符不能是数字和下划线。 2、文件名不要取为matlab的一个固有函数,m文件名的命名尽量不要是简单的英文单词，最好是由大小写英文、数字、下划线等组成。原因是简单的单词命名容易与matlab内部函数名同名，结果会出现一些莫名其妙的错误。3、文件存储路径一定为英文。4、m文件起名不能有空格，如three phase，应该写成three_ph">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://oceanyouth.github.io/img/cover%20(1).jpg">
+<meta property="article:published_time" content="2021-11-29T16:31:41.627Z">
+<meta property="article:modified_time" content="2021-11-29T16:31:41.627Z">
+<meta property="article:author" content="oceanyouth">
+<meta property="article:tag" content="少年 海 博客">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://oceanyouth.github.io/img/cover%20(1).jpg"><link rel="shortcut icon" href="/./img/avatar.jpg"><link rel="canonical" href="https://oceanyouth.github.io/draft/20211129_MATLAB%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":10,"languages":{"author":"作者: oceanyouth","link":"链接: ","source":"来源: 海与少年","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isanchor: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '海与少年',
+  isPost: false,
+  isHome: false,
+  isHighlightShrink: true,
+  isToc: false,
+  postUpdate: '2021-11-30 00:31:41'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const fontSizeVal = saveToLocal.get('global-font-size')
+    if (fontSizeVal !== undefined) {
+      document.documentElement.style.setProperty('--global-font-size', fontSizeVal + 'px')
+    }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    document.addEventListener('pjax:complete', detectApple)})(window)</script><link rel="stylesheet" href="/css/style.css"><meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="海与少年" type="application/atom+xml">
+</head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/./img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">2</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">1</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 清单</span><i class="fas fa-chevron-down expand hide"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 资源链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="not-home-page" id="page-header" style="background-image: url('/./img/homepage.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">海与少年</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 清单</span><i class="fas fa-chevron-down expand hide"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 资源链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="page-site-info"><h1 id="site-title">海与少年</h1></div></header><main class="layout" id="content-inner"><div id="page"><div id="article-container"><h1 id="Matlab-文件命名规则"><a href="#Matlab-文件命名规则" class="headerlink" title="Matlab 文件命名规则"></a>Matlab 文件命名规则</h1><p>1、文件名命名要用英文字符，第一个字符不能是数字和下划线。</p>
+<p>2、文件名不要取为matlab的一个固有函数,m文件名的命名尽量不要是简单的英文单词，最好是由大小写英文、数字、下划线等组成。原因是简单的单词命名容易与matlab内部函数名同名，结果会出现一些莫名其妙的错误。<br>3、文件存储路径一定为英文。<br>4、m文件起名不能有空格，如three phase，应该写成three_phase或者ThreePhase，推荐后者，因为C++也是这样命名的。</p>
+<p>总结：matlab文件命名最主要的原则是第一个字符不能是数字和下划线，不能有空格。</p>
+<h1 id="The-matlab-can-work-by-two-ways-of-script-file-and-command"><a href="#The-matlab-can-work-by-two-ways-of-script-file-and-command" class="headerlink" title="The matlab can work by two ways of script file and command."></a>The matlab can work by two ways of script file and command.</h1><p>Differ the uppercase and lowercase.<br>Matlab可以通过脚本文件和命令两种方式工作。</p>
+<p>区分大小写。</p>
+<p>Numerator<br>Denominator</p>
+<p>Residue留数<br>Pole极点<br>Direct item直项<br>zero零点</p>
+<p><img src="https://cdn.jsdelivr.net/gh/oceanyouth/picgodemo@main/img/20211129235352.png" alt="20211129235352"></p>
+<p>clf：清除当前的Figure<br>close：关闭当前的Figure窗口<br>close all：关闭所有的Figure窗口</p>
+<p>clc：清除命令窗口的内容</p>
+<p>clear：清除工作空间的所有变量<br>clear all：清除工作空间的所有变量，函数，和MEX文件</p>
+<p>传递函数基本分式形式：tf(num,den)<br>部分分式形式：residue(num,den)<br>零极点、增益形式：tf2zpk(num,den)<br>状态空间形式：tf2ss(num,den)</p>
+<p>%清除命令窗口的内容<br>clc;<br>%关闭所有的Figure窗口<br>close all<br>%清除工作空间的所有变量，函数，和MEX文件<br>clear all;<br>%传递函数分子系数<br>num=[2 5 3 6];<br>%传递函数分母系数<br>den=[1 6 11 6];<br>%传递函数基本形式<br>sys=tf(num,den);<br>%传递函数部分分式形式<br>[r,p,k]=residue(num,den);<br>%传递函数：基本形式→零极点增益形式<br>[z,p,k]=tf2zpk(num,den);<br>%传递函数：基本形式→状态空间表达式形式<br>[A,B,C,D]=tf2ss(num,den);</p>
+<p>%传递函数：零极点增益形式→基本形式<br>[num,den]=zpk2tf(z,p,k);<br>%传递函数：状态空间表达式形式→基本形式<br>[num,den]=ss2tf(A,B,C,D);</p>
+<p>%两个不同的状态空间表达式形式→串联<br>[A,B,C,D]=parallel(A1,B1,C1,D1, A2,B2,C2,D2)；<br>%两个不同的状态空间表达式形式→并联<br>[A,B,C,D]=series(A1,B1,C1,D1, A2,B2,C2,D2)；<br>%两个不同的状态空间表达式形式→正反馈<br>[A,B,C,D]=feedback(A1,B1,C1,D1, A2,B2,C2,D2,1)；<br>%两个不同的状态空间表达式形式→负反馈<br>[A,B,C,D]=feedback(A1,B1,C1,D1, A2,B2,C2,D2)；<br>%状态空间表达式形式→单位反馈<br>[A,B,C,D]=cloop(A1,B1,C1,D1)；</p>
+<p>%系统的单位阶跃响应<br>step(sys);<br>%系统的脉冲响应<br>impulse(sys);<br>%向量卷积运算——两个向量卷积，简单理解其实就是多项式乘法，可以将零极点增益形式的传递函数的分子和分母系数求出，即求得[num,den]。<br>den=conv([1 1],[4 1]);<br>%绘制系统的Nyquist图<br>nyquist (sys);<br>%绘制系统的Bode图<br>bode(sys);<br>%判断系统的稳定性，通过极点（根）＜0判定。<br>roots (den)；</p>
+<p>注：<br>（1）若tf(num,den)函数后加“；”，则命令窗口不显示最终结果；反之则显示。推论：在运算结方程或者设定参数后面加分号，即可达到在命令窗口不显示结果的目的。<br>（2）ans为代表没有定义变量的输出结果；如果变量有定义，那么就不会出现ans。ans为最后一个的输出值，后面的值会替换前面的值。<br>（3）“[]”是矩阵标识符；“()”是函数标识符。<br>（4）tf(num,den) ⇔printsys(num,den,’s’)<br>（5）zpk()和zp()都可以</p>
+<p>2、求系统的传递函数Simulink图。</p>
+<p>3、求系统的状态空间Simulink图。</p>
+<h1 id="Matlab里面的script和live-scrip"><a href="#Matlab里面的script和live-scrip" class="headerlink" title="Matlab里面的script和live-scrip"></a>Matlab里面的script和live-scrip</h1><pre><code>    在matlab2016a及以上的版本不建议安装notebook来编写实施脚本，以为之后的matlab里面会有live-script，他可以创建实施脚本，使脚本与方便操作。那么这个live script到底好在哪里？
+    在以前我们可以在命令窗口中写代码，然后运行，但这个很简陋，因为历史命令（代码行）和运行输出都在同一个窗口中，现在代码和运行输出是分开的，方便查看运行过的命令，这和RStudio很类似。同时，不仅仅是代码编写，插入的纯文本、图片、超链接，整个live script可以作为一个博客、笔记一样使用，简直是高配版markdown！
+
+    自matlab2016a版本以来，matlab多了创建实时脚本的功能。在未来版本中作为mupad的替代。其思想与mathcad相似，企图将文档与程序合二为一。就是在原有m文件上加了交互式图标，富文本功能和控件。格式为mlx。2016a以上版本都可打开，还可以输出为pdf等用于分享。
+</code></pre>
+<p>注意：matlab实时编辑器的各节变量还是全局的，只是可以单节单独运行，而且live-script显示公式的可读性更强，也就印证了将文本和编程统一的思想。</p>
+<h1 id="MATLAB符号工具箱"><a href="#MATLAB符号工具箱" class="headerlink" title="MATLAB符号工具箱"></a>MATLAB符号工具箱</h1><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">syms R1 R2 L C V2 V1 s;</span><br><span class="line">eqns = [V1/R2 == (V2 - V1)/(L*s + R1) + (V2 - V1)*s*C]; <span class="comment">% representing the equation I1 = I2 + I3 using their exact expressions</span></span><br><span class="line">V2tmp = solve(eqns, V2); <span class="comment">% Here I am solving for the above equation for the variable &quot;V2&quot;</span></span><br><span class="line"> TF = simplify(V2tmp/V1) <span class="comment">% this step is computing the transfer function and calling the &quot;simplify&quot; on the result</span></span><br></pre></td></tr></table></figure>
+
+<p>matlab新建脚本和新建实时脚本的区别<br>实时脚本不需要保存即可运行呢！但是有时候运算过程会卡顿</p>
+<p>建议新建脚本，需要先保存才能运行，且保存文件可供后续的使用</p>
+<p>符号变量定义sym、syms；</p>
+<p>Simplify (J1)</p>
+<p>pretty(f)     将符号表达式化简成与高等数学课本上显示符号表达式形式类似<br>collect(f)     合并符号表达式的同类项<br>horner(f)     将一般的符号表达式转换成嵌套形式的符号表达式<br>factor(f)     对符号表达式进行因式分解<br>expand(f)     对符号表达式进行展开<br>simplify(f)  对符号表达式进行化简，它利用各种类型的代数恒等式，包括求和、<br>积分、三角函数、指数函数以及 Bessel 函数等来化简符号表达式<br>simple(f)  对符号表达式尝试多种不同的算法进行化简，以显示长度最短的符号<br>表达式简化形式  %<br>[r,how]=simple(f)   返回的 r为符号表达式进行化简后的形式， how为所采用的简化方法</p>
+<p>matlab里面“；”代表矩阵一行的结束，而“，”表示一行的各个量。</p>
+<p>func1=eliminate([M<em>diff(x,t,2)==F-N-b</em>diff(x,t,1); N==m<em>diff(x+l</em>sin(phi),t,2)], N)<br>等价于<br>eqns=[M<em>diff(x,t,2)==F-N-b</em>diff(x,t,1), N==m<em>diff(x+l</em>sin(phi),t,2)]<br>func1=eliminate(eqns, N)</p>
+<p>eliminate(eqns,vars)<br>eqns：等式向量<br>vars：变量向量</p>
+<h2 id="MATLAB符号变量表达式与方程求解"><a href="#MATLAB符号变量表达式与方程求解" class="headerlink" title="MATLAB符号变量表达式与方程求解"></a>MATLAB符号变量表达式与方程求解</h2><p>主要内容<br>    1. 符号计算基础<br>        1.1 符号常量和符号变量<br>            语法：<br>                % 符号变量 两种表达方式<br>                    sym a ;</p>
+<pre><code>            % 符号常量
+                sym 3;
+            
+            %符号表达式
+                sym x
+                f=3*x+6;
+                
+    1.2 符号四则运算
+        + - * / ^
+        
+    1.3 符号表达式的简化
+            syms x y
+            s = (x^2+y^2)^2 + (x^2-y^2)^2;
+            simplify(s);
+        
+        % 因式分解、展开与合并同类项
+            syms a b x y
+            f1=a^3-b^3;
+            factor(f1); % 因式分解
+            
+            f2=(3*x^2+8*y^2)*(-x^2+3*y);
+            expand(f2); % 因式展开
+            
+            f3 = 2*x+3*x+4*x+y;
+            collect(f3); % 因式合并同类项
+            
+    1.4 符号矩阵运算
+        % 符号矩阵
+            a1=[x x+y;y x+y];
+            transpose(a1) % 转置
+            
+        % 符号函数值的求解
+            syms x
+            f1 = x^3 -9;
+            subs(f1,3) % 赋值函数，用数值替代符号变量替换函数
+            
+2. 符号函数
+    2.1 极限
+        % 符号极限、符号微分、符号积分
+            sym x
+            y=sin(x);
+            limit(y,0)
+    
+    2.2 微分
+        % 符号极限、符号微分、符号积分
+            sym x
+            y1 = x^2;
+            diff(y1)    % 求导、微分
+            diff(y1,2) % 二阶导数
+    
+    2.3 积分
+        % 符号积分
+            sym x
+            y3=(3-x^2)^3;
+            int(y3)   % 不定积分
+            y4=abs(1-x); % 绝对值函数
+            int(y4,1,2)   % 定积分1-2范围内
+    
+3. 符号级数
+
+4. 符号方程求解
+    4.1 代数方程
+        %代数方程
+            clear all
+            syms x
+            solve(x+x*exp(x)-10);
+            eval(solve(x+x*exp(x)-10)) % 这是数值的表达结果
+        
+        %方程组
+            [x,y] = solve(&#39;x+y=10&#39;,&#39;x-y=2&#39;,&#39;x,y&#39;)  % 输出x和y的值
+        
+    4.2 微分方程
+        % 符号的微分方程
+            dsolve(&#39;Dy-(x^2+y^2)/x^2/2&#39;,&#39;x&#39;)  
+        % 微分方程组合上面的方程组道理一样
+</code></pre>
+<h1 id="syms是定义符号变量；sym则是将字符或者数字转换为字符。"><a href="#syms是定义符号变量；sym则是将字符或者数字转换为字符。" class="headerlink" title="syms是定义符号变量；sym则是将字符或者数字转换为字符。"></a>syms是定义符号变量；sym则是将字符或者数字转换为字符。</h1><p>y=sym(‘x’);与<br>syms x; y=x; 的功能一样。<br>另外sym x和syms x有很大的区别： sym x是将字符’x’转换为字符，而syms x则是定义符号变量x。</p>
+<h1 id="clear-all"><a href="#clear-all" class="headerlink" title="clear all"></a>clear all</h1><p>   syms x<br>   solve(x+x^2-10==0,x)</p>
+<p>clear all<br>   syms x<br>   solve(x+x^2-10,x)</p>
+<p>clear all<br>   syms x<br>   solve(x+x^2-10)</p>
+<p>%显示错误<br>clear all<br>   sym x<br>   solve(x+x^2-10==0,x)</p>
+<h1 id="clear-all-1"><a href="#clear-all-1" class="headerlink" title="clear all"></a>clear all</h1><p>   syms x<br>   solve(x+x^2-10==0,x)</p>
+<p>clear all<br>   syms x<br>   solve(x+x^2-10,x)</p>
+<p>clear all<br>   syms x<br>   solve(x+x^2-10)</p>
+<p>%显示错误<br>clear all<br>   sym x<br>   solve(x+x^2-10==0,x)</p>
+<h1 id="Matlab符号工具箱使用简介"><a href="#Matlab符号工具箱使用简介" class="headerlink" title="Matlab符号工具箱使用简介"></a>Matlab符号工具箱使用简介</h1><p>一、符号对象的创建<br>二、微积分基本运算<br>三、解方程<br>四、符号表达式的化简和代换<br>五、符号函数曲线的绘制</p>
+<p>一、符号对象的创建<br>在数学应用中，常常需要做极限、微分、求导数等运算，MATLAB称这些运算为符号运算。<br>MATLAB的符号运算是通过调用符号运算工具箱（Symbolic Math Toolbox）内的工具实现，其内核是借用Maple数学软件的。MATLAB的符号运算工具箱包括微积分运算、解方程、线性代数、化简和代换等几个方面的工具。<br>符号运算工具箱处理的主要对象是符号对象，包括符号、符号变量和符号表达式。</p>
+<ol>
+<li>字符串变量的创建<br>用单引号界定的字符序列称为字符串。字符串是一种特殊的符号对象，在数据处理、造表和函数求值中，字符串具有重要的应用。</li>
+</ol>
+<p>例1</p>
+<blockquote>
+<blockquote>
+<p>s = ‘hello’<br>s = Hello</p>
+</blockquote>
+</blockquote>
+<p>【注】①字符串中的字符可以是数字、英文字母、汉字、横线、括号、表达式等。<br>②用赋值符号“=”把字符串赋给某个标识符，例如s，这个标识符称为字符串变量名，简称字符名。</p>
+<p>2.符号变量、表达式的创建<br>MATLAB中有两个函数定义符号变量、表达式<br>（1）sym函数<br>调用格式：f=sym(‘表达式’)<br>功能：用于生成单个的符号对象。</p>
+<p>例2：</p>
+<blockquote>
+<blockquote>
+<p>sym(‘x’)<br>ans = x % 符号变量<br>y = sym(‘2+cos(x)’)<br>y = 2+cos(x) % 三符号表达式</p>
+</blockquote>
+</blockquote>
+<p>（2）syms函数<br>调用格式：syms varl var2 var3 … [flag]<br>功能：用于生成多个符号对象，注意空格。其中flag指定符号变量的类型：real，unreal</p>
+<p>例3：</p>
+<blockquote>
+<blockquote>
+<p>syms y u %两个符号变量<br>p = exp(-y/u)<br>p = exp(-y/u) % 符号表达式<br>q = y^2+u^3+u<em>y<br>q = y^2+u^3+u</em>y % 符号表达式</p>
+</blockquote>
+</blockquote>
+<p>3.符号表达式中的符号变量的确认<br>调用格式：findsym（“表达式”）<br>功能：用于确定一个表达式中的符号变量<br>例4：</p>
+<blockquote>
+<blockquote>
+<p>syms a b c k t y real<br>g=q+a*(2<em>p-1)^3-b</em>sin(4<em>y)<br>g=y^2+u^3+u</em>y+a*(2<em>exp(-y/u)-1)^3-b</em>sin(4*y)<br>findsym(g) % 找出所有的符号变量<br>ans=a, b, u, y<br>findsym(g, 2) % 找出距x最近的2个符号变量<br>ans=y, u</p>
+</blockquote>
+</blockquote>
+<p>4.将符号表达式结果转化为数值<br>调用格式：double(‘表达式’)<br>功能：将符号常数转化为双精度数值<br>例5 考察符号对象和普通数据对象之间的差别：</p>
+<blockquote>
+<blockquote>
+<p>sqrt(2) % 返回数值结果<br>ans = 1.4142 </p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>x = sqrt(sym(2)) % 返回符号结果<br>x = 2^(1/2)<br>double(x) % 符号常数转化<br>ans = 1.4142</p>
+</blockquote>
+</blockquote>
+<p>二、微积分基本运算<br>设a, b, t, x, y是已定义的符号变量</p>
+<ol>
+<li>求极限<br>调用格式：limit(f, x, a [, ‘right/left’])<br>功能：求f表达式在x-&gt;a时的极限（单侧极限）</li>
+</ol>
+<p>例1 求极限lim_(x→2)⁡〖(x−a)/(x^2−a^2 )〗</p>
+<blockquote>
+<blockquote>
+<p>syms x a<br>f = (x-a)/(x^2-a^2)；<br>limit(f, x, 2) % 求x&gt;2时的极限<br>ans=1/(2+a)<br>limit(f, a, 2) % 求a &gt; 2时的极限<br>ans = 1/(x+2)<br>limit(f) % 默认x &gt; 0<br>ans = l/a<br>limit(1/x) % 求x &gt; 0时极限不存在<br>ans = NaN<br>limit(1/x, x, 0,  ‘left’) % 左极限<br>ans = -inf<br>limit(1/x, x, 0,  ‘right’) % 右极限<br>ans = inf</p>
+</blockquote>
+</blockquote>
+<ol start="2">
+<li>求导数（注意diff具有求导和求差分两种功能，特别注意’’的使用）符号微分和数值微分<br>调用格式：diff(f, v, n)<br>功能：对指定变量v求n阶导数</li>
+</ol>
+<p>例2 求导数</p>
+<blockquote>
+<blockquote>
+<p>syms x a t; f = sin(a<em>x)-cos(a</em>t);<br>g1 = diff(f) % 默认对x求导<br>g1 = cos(a*x)<em>a<br>g2 = diff(f, a) % 对a求导<br>g2 = coa(a</em>x)<em>x+sin(a</em>t)<em>t<br>g3 = diff(f, x, 2) % 对x求二阶导数<br>g4 = -sin(a</em>x)*a^2</p>
+</blockquote>
+</blockquote>
+<p>例3 对符号矩阵求导, 是作用于矩阵的每个元素</p>
+<blockquote>
+<blockquote>
+<p>syms x a t;<br>A = [sin(a<em>x), cos(t</em>x); a^2-x<em>t, t^2+t</em>x]<br>A = [sin(a<em>x), cos(t</em>x)]<br>[a^2-x<em>t, t^2+t</em>x]<br>dy = diff(A) % 默认对x求导<br>dy = [cos(a*x)<em>a, -sin(t</em>x)<em>t]<br>[-t, t]<br>dy = diff(A, t) % 对t球导<br>dy = [0, -sin(t</em>x)<em>x]<br>[-x, 2</em>t+x]</p>
+</blockquote>
+</blockquote>
+<ol start="3">
+<li>求积分<br>调用格式：int(f, v, [a, b])<br>功能：对f表达式的v变量求定积分(在区间[a, b]求定积分)</li>
+</ol>
+<p>例4 求不定积分</p>
+<blockquote>
+<blockquote>
+<p>syms x a t;<br>f = sin(a<em>x); g = int(f) % 默认对x求积分<br>g = -1/a</em>cos(a<em>x)<br>g=int(f, a) % 对a求积分<br>g = -1/x</em>cos(a*x)</p>
+</blockquote>
+</blockquote>
+<p>例5 求定积分</p>
+<blockquote>
+<blockquote>
+<p>syms x a t;<br>f = sin(a<em>x); g = int(f, 0, pi) % 对x求定积分<br>g = -(cos(pi</em>a)-1)/a<br>f = sin(a<em>x); g = int(f, a, 0, pi) % 对a求定积分<br>g = -(cos(pi</em>x-1)/x<br>f = exp(-x^2); g = int(f, 0, 1) % 结果无解析表达式<br>g = 1/2*erf(1)*pi^(1/2)<br>a = double(g)<br>a = 0.7468 % 求定积分数值</p>
+</blockquote>
+</blockquote>
+<ol start="4">
+<li>级数求和<br>调用格式：symsum(f, t, a, b)<br>功能：对f表达式的符号变量t从a到b求级数和</li>
+</ol>
+<p>例6 计算级数</p>
+<blockquote>
+<blockquote>
+<p>syms x n<br>symsum(1/x, 1, 3)<br>ans = 1l/6<br>S1 = symsum(1/x^2, 1, inf)<br>Sl = 1/6*pi2<br>S2 = symsum(x^n, n, 0, inf)<br>S2 = -l/(x-1)</p>
+</blockquote>
+</blockquote>
+<ol start="5">
+<li>泰勒级数展开<br>调用格式：taylor(f, n, x, a)<br>功能：函数f自变量x在a点展开n-l次泰勒多项式<br>f(x)=∑24_(k=0)^(n−1)▒(f^((k) ) (a))/k! 〖(x−a)〗^k</li>
+</ol>
+<p>例7 泰勒展开</p>
+<blockquote>
+<blockquote>
+<p>syms x; f = sin(x);<br>taylor(f) % f在x = 0点的5次泰勒多项式<br>ans = x-1/6<em>x^3+1/120</em>x^5<br>taylor(f, 4, [], 2) % f在x = 2点的3次泰勒多项式<br>ans = sin(2)+cos(2)<em>(x-2)-1/2</em>sin(2)<em>(x-2)^2-1/6</em>cos(2)*(x-2)^3</p>
+</blockquote>
+</blockquote>
+<p>三、解方程</p>
+<ol>
+<li>非线性方程(组)<br>调用格式：S = solve(fl, f2, …, fn, xl, x2, …, xn)<br>功能：求方程组fl, …, fn关于指定变量xl, …, xn的解</li>
+</ol>
+<p>例1 解方程(组)</p>
+<blockquote>
+<blockquote>
+<p>syms a b c x; f = a<em>x^2+b</em>x+c; % f中无等号<br>s = solve(f) % 解方程f = 0<br>S = [1/2/a*(-b+(b^2-4<em>a</em>c)(1/2))]<br>       [1/2/a*(-b-(b^2-4<em>a</em>c)(1/2))]</p>
+</blockquote>
+</blockquote>
+<p>例2. 解非线性方程(组)</p>
+<blockquote>
+<blockquote>
+<p>syms x y;<br>fl = ‘x<em>2+x</em>y+y = 3’; % 方程用单引号括起<br>f2 = ‘x^2-4*x+3 = 0’;<br>[x, y] = solve(fl, f2, x, y)</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>syms x y;<br>fl = x<em>2+x</em>y+y == 3; % 方程用单引号括起<br>f2 = x^2-4*x+3 == 0;<br>[x, y] = solve(fl, f2, x, y)</p>
+</blockquote>
+</blockquote>
+<p>x = [1]<br>      [3]<br>y = [1]<br>      [-3/2]<br>方程组的解为：(1, 1)和(1, -3/2)</p>
+<ol start="2">
+<li>微分方程(组)<br>调用格式：dsolve (‘S’, ‘sl’, ‘s2’, …, ‘x’)<br>功能：解微分方程组S, 初始条件为sl, s2, …, 自变量x<br>【注】①默认的自变量为t.<br>②方程中用D表示微分, 如Dy表示; 如果在D后面带有数字, 则表示多阶导数, 如D2y表示;<br>③如果不指定初始值, 或者初始值方程的个数少于因变量的个数, 则最后得到的结果中会包含常数项, 表示为C1, C2等.<br>④dsolve函数最多接受12个输入参数</li>
+</ol>
+<p>例3 解微分方程</p>
+<blockquote>
+<blockquote>
+<p>syms x y<br>dsolve(‘Dy = 1+y^2’)<br>ans = tan(t+Cl) % 默认自变量为t, 包含常数Cl<br>y = dsolve(‘Dy = l+y^2’, ‘y(0) = 11’, ‘x’) % 指定初值<br>y = tan(x+1/4<em>pi)<br>x = dsolve(‘D2x+2</em>D1x+2<em>x = exp(t)’, ‘x(0) = 1’, ‘Dx (0) = 0’) % 二阶微分方程, 指定初值<br>x = 1/5</em>exp(t)+4/5*exp(-t)<em>cos(t)+3/5</em>exp(-t)*sin(t)</p>
+</blockquote>
+</blockquote>
+<p>例4 解微分方程组</p>
+<blockquote>
+<blockquote>
+<p>syms f g<br>S = dsolve(‘Df = 3<em>f+4</em>g’, ‘Dg = -4<em>f+3</em>g’)<br>S = f: [1×l sym]<br>      g: [1×l sym] % 返回结构数组S<br>f = S.f, g = S.g % 查看s中f, g的值<br>f = exp(3<em>t)</em>(cos(4<em>t)<em>C1+sin(4</em>t)<em>C2)<br>g = exp(3</em>t)</em>(-sin(4*t)<em>Cl+cos(4</em>t)*C2)</p>
+</blockquote>
+</blockquote>
+<ol start="3">
+<li>线性代数<br>给定线性方程组{■8(■8(a_11 x_1+a_12 x_2+⋯+a_1n x_n=b_1@a_21 x_1+a_22 x_2+⋯+a_2n x_n=b_2@⋮)@a_n1 x_1+a_n2 x_2+⋯+a_nn x_n=b_n ) ┤<br>设A =(■8(■8(■8(a_11&amp;a_12&amp;⋯@a_21&amp;a_22&amp;⋯@⋮&amp;⋮&amp;⋱)@■8(a_n1&amp;a_n2&amp;⋯))&amp;■8(■8(a_1n@a_2n@⋮)@a_nn )))  , A =(■8(■8(x_1@x_2@⋮)@x_n )), b =(■8(■8(b_1@b_2@⋮)@b_n )),<br>按矩阵乘法, 线性方程组(1)可表示为<br>Ax=b</li>
+</ol>
+<p>基本命令：<br>Ax=b<br>①求非齐线性方程组Ax = b的(特)解：x = A\b<br>②求齐次线性方程组Ax = 0的基础解系：X = null(A)<br>③求矩阵A的特征值：[V, L] = eig(A)<br>④求方阵A的行列式：D = det(A)</p>
+<p>例5 解线性方程组</p>
+<blockquote>
+<blockquote>
+<p>syms a b c; A = [a b c; b c a; c a b]; B = [1 1 1];<br>X = A\B<br>X = [1/(a+c+b)]<br>       [1(a+c+b)]<br>       [1/(a+c+b)]</p>
+</blockquote>
+</blockquote>
+<p>例6 解线性方程组</p>
+<blockquote>
+<p>A = sym([1 1 -3 -1; 3 -1 -3 4; 1 5 -9 -8]); % 符号化矩阵</p>
+<blockquote>
+<p>b = sym([1 40]);<br>Xl = A\b, X = nul(A)<br>特解X1 = [5/4]<br>                 [-1/4]<br>                 [0]<br>                 [0]<br>基础解系<br>X = [-3/4, 3/2]<br>       [7/4, 3/2]<br>       [0, 1]<br>       [1, 0]<br>syms kl k2<br>k = [k1; k2];<br>XX = Xl+X<em>k<br>通解<br>XX = [5/4-3/4+k1+3/2</em>k2]<br>          [-1/4+74<em>k1+3/2</em>k2]<br>          [k2]<br>          [kl]</p>
+</blockquote>
+</blockquote>
+<p>四、符号表达式的化简和代换</p>
+<ol>
+<li>化简符号表达式<br>MATLAB提供了许多化简符号表达式的函数：<br>①合并同类项(降幂排列)：collect(P, x)<br>②将乘积展开为和式：expand(P)<br>③把多项式转换为嵌套形式：horner(P)<br>④多项式因式分解：factor(P)<br>⑤利用各种恒等式化简：simplify(P)<br>⑥用习惯书写方式显示：pretty(f)</li>
+</ol>
+<p>例1 合并同类项, 将乘积展开</p>
+<blockquote>
+<blockquote>
+<p>symc x y t<br>collect(x^3+2<em>x^2-5</em>x^2+4+x-3<em>x+12-3) % 合并同类项<br>ans = x^3-3</em>x^2+x+9<br>g = collect(1+x)<em>t+t</em>x) % 合并同类项<br>g = 2<em>t</em>x+t<br>expand((x-1)<em>(x^2)</em>(x-3)) % 乘积展开<br>ans = x^3-6<em>x^2+11</em>x-6<br>expand(cos(x+y)) % 乘积展开<br>ans = cos(x)*cos(y)-sin(x)*sin(y)</p>
+</blockquote>
+</blockquote>
+<p>例2 转换为嵌套形式, 因式分解</p>
+<blockquote>
+<blockquote>
+<p>horner(x^3-6<em>x^2+11</em>x-6) % 转换为嵌套<br>ans = -6+(11+(-6+x)<em>x)<em>x<br>P = horner(1.1+2.2</em>x+3.3</em>x^2) % 转换为嵌套<br>P = 11/10+(11/5+33/10<em>x)<em>x<br>factor(x^3-6</em>x^2+11</em>x-6) % 因式分解<br>ans = (x-1)<em>(x-2)</em>(x-3)<br>n-1: 5; X = [x, x, x, x, x]; P = x^n+l<br>P = [1+x, x^2+1, x^3+1, x^4+1, x^5+1]<br>f = factor(P) % 因式分解<br>f = [l+ x, x^2+1, (1+x)<em>(x^2-x+1), x^4+1, (1+x)</em>(x^4-x^3+x^2-x+1)]</p>
+</blockquote>
+</blockquote>
+<p>例3. 恒等式化简, 习惯书写方式</p>
+<blockquote>
+<blockquote>
+<p>syms x y a b<br>q = simplify((1-x^3)/(1-x)) % 化简符号表达式<br>q = x^2+x+1<br>p = simplify(a^3+6/a^2+12/a+8S)^(1/3))<br>p= ((2*a+1)^3/a^3)^(1/3)<br>pretty(P) % 习惯书写方式显示<br>(■8(3@(2a+1))/■8(3@a))^(1∕3)</p>
+</blockquote>
+</blockquote>
+<ol start="2">
+<li>代换命令<br>MAILAB提供了两种代换命令：<br>(1) A = subs(S, old, new) 用符号new置换表达式S中的符号old, 得到A<br>(2) A = subexpr(S, ss) 用符号变量置换表达式S中的公共子表达式, 得到A</li>
+</ol>
+<p>例4 符号置换</p>
+<blockquote>
+<blockquote>
+<p>syms a b c x y, A = subs(a^2+2<em>a</em>b+b^2, a, 4)<br>A = 16+8<em>b+b^2<br>B = subexpr(a^2+2</em>a<em>b+b^2, a, x)<br>B = x^2+2</em>x*b+b^2</p>
+</blockquote>
+</blockquote>
+<p>例5 符号置换</p>
+<blockquote>
+<blockquote>
+<p>syms a b c d w;<br>A = [a b;  cd]; (V, D] = eig(A);<br>[RVD, W] = subexpr([V; D], W)<br>RVD = [-(1/2<em>d-1/2</em>3-1/2<em>W)c, -(1/2</em>d-1/2<em>a+1/2</em>W)/c]<br>             [1, 1]<br>             [1/2+d+1/2+a+1/2+W, 0]<br>             [0, 1/2<em>d+1/2</em>3-1/2W]<br>w = (d^2-2<em>a</em>d+a^2+4<em>b</em>c)^(1/2)</p>
+</blockquote>
+</blockquote>
+<p>五、符号函数曲线的绘制<br>MATLAB提供了绘制符号的数曲线命令：<br>(1) ezplot(f, [min, max]) 绘制函数f在指定区间内的2维曲线图<br>(2) ezplot3(x, y, z, [tmin, tmax]) 在指定参数区间内绘制3维曲线图<br>(3) ezmeshc(f, domain) 绘制二元函数f在指定区域上的图形, domain为4×1数组</p>
+<h1 id="erf函数"><a href="#erf函数" class="headerlink" title="erf函数"></a>erf函数</h1><p>在数学中，误差函数（也称之为高斯误差函数，error function or Gauss error function）是一个非基本函数（即不是初等函数），其在概率论、统计学以及偏微分方程和半导体物理中都有广泛的应用。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/oceanyouth/picgodemo@main/img/20211130000212.png" alt="20211130000212"></p>
+<h1 id="Simulink-User-Defined-Functions"><a href="#Simulink-User-Defined-Functions" class="headerlink" title="Simulink/User-Defined Functions"></a>Simulink/User-Defined Functions</h1><p><img src="https://cdn.jsdelivr.net/gh/oceanyouth/picgodemo@main/img/20211130000339.png" alt="20211130000339"><br>Fcn：（在 R2006a 之前推出）Fcn 模块将指定的数学表达式应用于其输入。表达式可以包含以下一个或多个组成部分：<br>u - 模块的输入。如果 u 是向量，则 u(i) 表示向量的第 i 个元素；u(1) 或单独一个 u 表示第一个元素。<br>数值常量。<br>算术运算符 (+ - * / ^)。<br>关系运算符 (== != &gt; &lt; &gt;= &lt;=) - 如果关系为 true，表达式返回 1；否则返回 0。<br>逻辑运算符 (&amp;&amp; || !) - 如果关系为 true，表达式返回 1；否则返回 0。<br>括号。<br>数学函数- abs、acos、asin、atan、atan2、ceil、cos、cosh、exp、floor、hypot、log、log10、power、rem、sgn（等效于 MATLAB® 中的 sign）、sin、sinh、sqrt、tan 和 tanh。</p>
+<p>Function Caller：Function Caller 模块调用并执行使用 Simulink® Function 模块定义的函数或导出的 Stateflow® 函数。使用 Function Caller 模块，您可以从模型或图形层次结构中的任意位置调用函数。<br>扩展功能：<br>C/C++ 代码生成，使用 Simulink® Coder™ 生成 C 代码和 C++ 代码。<br>定点转换，使用 Fixed-Point Designer™ 设计和仿真定点系统。</p>
+<p>Initialize Function：Initialize Function 模块是预配置的子系统模块，它在发生模型初始化事件时执行。默认情况下，Initialize Function 模块包括一个 Event Listener 模块（其 Event 设置为 “Initialize”）、一个 Constant 模块（其 Constant value 设置为 0）和一个 State Writer 模块。<br>扩展功能：<br>C/C++ 代码生成，使用 Simulink® Coder™ 生成 C 代码和 C++ 代码。<br>定点转换，使用 Fixed-Point Designer™ 设计和仿真定点系统。</p>
+<p>Interpreted MATLAB Function：（在 R2011a 中推出）Interpreted MATLAB Function 模块用于将指定的 MATLAB® 函数或表达式应用于输入。函数的输出必须与模块的输出维度相匹配。此模块很慢，因为它在每个积分步中都会调用 MATLAB 解析器。请考虑改用内置模块（如 Math Function 模块）。或者，您可以编写 MATLAB S-Function 或 MEX 文件 S-Function 形式的函数，然后使用 S-Function 模块访问该函数。</p>
+<p>MATLAB Function（在 R2011a 中推出）：使用 MATLAB Function 模块可以编写用于 Simulink® 模型的 MATLAB® 函数。您创建的 MATLAB 函数针对仿真执行，并生成以 Simulink Coder™ 为目标的代码。<br>扩展功能<br>C/C++ 代码生成，使用 Simulink® Coder™ 生成 C 代码和 C++ 代码。<br>HDL 代码生成，使用 HDL Coder™ 为 FPGA 和 ASIC 设计生成 Verilog 代码和 VHDL 代码。<br>PLC 代码生成，使用 Simulink® PLC Coder™ 生成结构化文本代码。<br>定点转换，使用 Fixed-Point Designer™ 设计和仿真定点系统。</p>
+<p>Level-2 MATLAB S-Function：（在 R2010b 中推出）此模块允许您在模型中使用 Level-2 MATLAB® S-Function。为此，请在模型中创建此模块的实例。然后，在模块参数对话框的 S-function name 字段中输入 Level-2 MATLAB S-Function 的名称。使用 S-Function 模块在模块中包含 Level-1 MATLAB S-Function。如果 Level-2 MATLAB S-Function 定义了其他参数，您可以在模块参数对话框的 Parameters 字段中输入它们。将参数输入为 MATLAB 表达式，以按照 MATLAB S-Function 定义的顺序计算它们的值。使用逗号分隔每个表达式。如果模型中包含 Level-2 MATLAB S-Function 模块，而 S-Function 中发生错误，则 Level-2 MATLAB S-Function 模块将在对话框中显示该错误的 MATLAB 堆栈跟踪信息。点击 OK 关闭此对话框。<br>扩展功能：<br>C/C++ 代码生成，使用 Simulink® Coder™ 生成 C 代码和 C++ 代码。<br>定点转换，使用 Fixed-Point Designer™ 设计和仿真定点系统。</p>
+<p>注意：提供Level-1 MATLAB文件S函数是为了确保具有先前S函数的Simulink模型能够正确仿真。使用Level-2 MATLAB文件S函数来开发新的S函数。</p>
+<p>MATLAB System：（在 R2013b 中推出）MATLAB System 模块将现有的 System object（基于 matlab.System）添加到 Simulink® 中。它还允许您使用 System object API 为 Simulink 开发新模块。对于解释执行，模型使用 MATLAB® 执行引擎进行模块仿真。对于代码生成，模型使用代码生成进行模块仿真（使用代码生成支持的 MATLAB 代码子集）。MATLAB System 模块仅支持 MATLAB 中的部分可用函数。<br>扩展功能<br>C/C++ 代码生成，使用 Simulink® Coder™ 生成 C 代码和 C++ 代码。<br>HDL 代码生成，使用 HDL Coder™ 为 FPGA 和 ASIC 设计生成 Verilog 代码和 VHDL 代码。<br>定点转换，使用 Fixed-Point Designer™ 设计和仿真定点系统。</p>
+<p>S-Function（在 R2006a 之前推出）：通过 S-Function 模块，可以从模块图中访问 S-Function。由 S-function name 参数指定的 S-Function 可以是 Level-2 MATLAB® S-Function，也可以是 Level-1 或 Level-2 C MEX S-Function。使用 Level-2 MATLAB S-Function 模块，在模块图中包含一个 Level-2 MATLAB S-Function。S-Function 模块显示指定的 S-Function 的名称，以及该 S-Function 指定的输入和输出端口的数量。连接输入端口的信号必须具有 S-Function 为输入端口指定的维度。<br>扩展功能：<br>C/C++ 代码生成，使用 Simulink® Coder™ 生成 C 代码和 C++ 代码。<br>定点转换，使用 Fixed-Point Designer™ 设计和仿真定点系统。</p>
+<p>S-Function Builder（在 R2006a 之前推出）：S-Function Builder 集成新的或现有 C 或 C++ 代码，并根据您提供的设定创建 C MEX S-Function。S-Function Builder 模块实例还作为 Simulink® 模型中生成的 S-Function 的封装程序。在仿真包含 S-Function Builder 模块实例的模型时，Simulink 软件调用生成的 S-Function，以调用该实例的mdlStart、mdlOutputs、mdlDerivatives、mdlUpdate 和 mdlTerminate 方法中您的 C 或 C++ 代码。S-Function Builder 模块不支持封装。但是，您可以封装包含 S-Function Builder 模块的 Subsystem 模块。<br>扩展功能：<br>C/C++ 代码生成，使用 Simulink® Coder™ 生成 C 代码和 C++ 代码。<br>定点转换，使用 Fixed-Point Designer™ 设计和仿真定点系统。</p>
+<p>S-Function Examples：一些实例。</p>
+<p>Simulink Function（在 R2014b 中推出）：Simulink Function 模块是一个预先配置的 Subsystem 模块，可以用它作为一个起点来使用 Simulink® 模块以图形方式定义函数。该模块为函数调用方提供了文本接口。您可以从 Function Caller 模块、MATLAB Function 模块或 Stateflow® Chart (Stateflow) 调用 Simulink Function 模块。您可以在 Sequence Viewer 中可视化 Simulink Function 调用。该查看器可显示使用参数进行调用的时间和返回的值。<br>扩展功能：<br>C/C++ 代码生成，使用 Simulink® Coder™ 生成 C 代码和 C++ 代码。<br>定点转换，使用 Fixed-Point Designer™ 设计和仿真定点系统。</p>
+<p>Terminate Function：该终止功能块是预先配置的子系统块上的模型执行终止事件。默认情况下，“ 终止功能”块包括一个“ 事件侦听器”块，其中“ 事件”设置为Terminate，“ 终止符”块和一个“ 状态读取器”块。<br>扩展功能：<br>C/C++ 代码生成，使用 Simulink® Coder™ 生成 C 代码和 C++ 代码。<br>定点转换，使用 Fixed-Point Designer™ 设计和仿真定点系统。</p>
+<p>User-Defined Functions<br>自定义函数模块，如 MATLAB Function、MATLAB System、Simulink Function 和 Initialize Function</p>
+<p>Simulink 模块<br>Argument Inport                             Simulink Function 模块的参数输入端口<br>Argument Outport                             Agument output port for Simulink Function block<br>Event Listener                                     Add event port to a subsystem block<br>Fcn                                                     对输入应用指定的表达式<br>Function Caller                             调用 Simulink 或导出的 Stateflow 函数<br>Initialize Function                             Executes contents on a model initialize event<br>Interpreted MATLAB Function     将 MATLAB 函数或表达式应用于输入<br>Level-2 MATLAB S-Function     在模型中使用 Level-2 MATLAB S-Function<br>MATLAB Function                     将 MATLAB 代码包含在生成可嵌入式 C 代码的模型中<br>MATLAB System                             在模型中包含 System object<br>Reset Function                             Executes contents on a model reset event<br>S-Function                                     在模型中包含 S-Function<br>S-Function Builder                     集成 C 或 C++ 代码以创建 S-Function<br>Simulink Function                             使用 Simulink 模块定义的函数<br>State Reader                                     Read a block state<br>State Writer                                     Write to a block state<br>Terminate Function                             Execute contents on a model terminate event</p>
+<p><img src="https://cdn.jsdelivr.net/gh/oceanyouth/picgodemo@main/img/20211130000456.png" alt="20211130000456"></p>
+<p>Simulink中有以下几种用户自定义的函数模块：<br>Fcn：适用于简单的表达式。所谓简单，不一定是表达式很短小，而是指输入输出之间的关系可以直接用一个表达式描述，即不使用状态，也不使用流程控制，而且需要注意，表达式中可用的函数比较有限（基本上就是一些简单的数学函数）。可以生成C代码。</p>
+<p>MATLAB Fcn：很多人可能更容易掌握这个模块，这个模块对应一个M文件，对输入信号可以进行任何处理后得到输出。可以使用MATLAB的任何函数。限制主要有两个方面：（1）不能进行代码生成，所以准备做控制原形或半实物仿真的要尽量避免使用；（2）原则上不能使用状态量，也就是说，只使用当前时刻的输入经计算处理得到输出，而不能使用前一时刻的信息——如果需要使用前一时刻的信息，一般需要配合使用外部其他模块（如积分器或单位延时）。</p>
+<p>Embedded MATLAB Fcn：和MATLAB Fcn类似，区别主要有以下几个方面：（1）可以生成C代码；（2）要求比MATLAB Fcn严格很多，而且有很多函数或工具箱在EMF中不允许使用（因为代码生成的限制）；（3）模块自身支持多输入多输出。function [output1, output2, output3…] = fcn_name(input1, input2, input3…)</p>
+<p>S-Function：这是Simulink自定义模块最难掌握也是最强大的一种，原则上可以用它实现Simulink任何模块的功能。S函数与前几种模块的最大区别是可以使用状态，其根据仿真过程把代码分成几个部分：初始化、计算导数（积分由Simulink系统完成）、更新状态、计算输出、终止处理（其中中间几个是在仿真过程中周期性调用的），这给了用户以非常大的自由来进行代码的组织。S函数可以用C语言或M语言实现，而M语言又分不同的Level。写S函数有相应的模板和示例，想学的话需要花上一些时间才能搞明白。</p>
+</div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="lv-container" data-id="city" data-uid="MTAyMC81NDYxMS8zMTA4Mg=="></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/./img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">oceanyouth</div><div class="author-info__description">少年！在知识的海洋遨游吧！</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">2</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">1</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/oceanyouth"><i class="fab fa-github"></i><span>Into My World</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/oceanyouth" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:18352537966@163.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">记录分享学习生活！</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2021/12/03/%E5%AD%A6%E4%B9%A0%E5%88%86%E5%8C%BA/03%20%E5%8A%9B%E5%AD%A6/20211125_%E7%90%86%E8%AE%BA%E5%8A%9B%E5%AD%A6-%E4%BB%BB%E5%BB%B6%E5%AE%87/" title="无题"><img src="/./img/cover%20(5).jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/2021/12/03/%E5%AD%A6%E4%B9%A0%E5%88%86%E5%8C%BA/03%20%E5%8A%9B%E5%AD%A6/20211125_%E7%90%86%E8%AE%BA%E5%8A%9B%E5%AD%A6-%E4%BB%BB%E5%BB%B6%E5%AE%87/" title="无题">无题</a><time datetime="2021-12-03T14:01:34.140Z" title="发表于 2021-12-03 22:01:34">2021-12-03</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/11/03/%E7%94%9F%E6%B4%BB%E5%88%86%E5%8C%BA/%E5%8D%9A%E5%AE%A2%E5%88%9D%E4%BD%93%E9%AA%8C/" title="博客初体验"><img src="/./img/cover%20(6).jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="博客初体验"/></a><div class="content"><a class="title" href="/2021/11/03/%E7%94%9F%E6%B4%BB%E5%88%86%E5%8C%BA/%E5%8D%9A%E5%AE%A2%E5%88%9D%E4%BD%93%E9%AA%8C/" title="博客初体验">博客初体验</a><time datetime="2021-11-02T16:00:00.000Z" title="发表于 2021-11-03 00:00:00">2021-11-03</time></div></div></div></div><div class="card-widget" id="card-newest-comments"><div class="item-headline"><i class="fas fa-comment-dots"></i><span>最新评论</span></div><div class="aside-list"><span>正在加载中...</span></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>分类</span>
+            
+            </div>
+            <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94/"><span class="card-category-list-name">生活随笔</span><span class="card-category-list-count">1</span></a></li>
+            </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/%E7%AC%AC%E4%B8%80%E7%AF%87/" style="font-size: 1.15em; color: rgb(29, 152, 133)">第一篇</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/12/"><span class="card-archive-list-date">十二月 2021</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/11/"><span class="card-archive-list-date">十一月 2021</span><span class="card-archive-list-count">1</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">2</div></div><div class="webinfo-item"><div class="item-name">已运行时间 :</div><div class="item-count" id="runtimeshow" data-publishDate="2021-11-02T16:00:00.000Z"></div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">2k</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2021-12-03T14:07:18.918Z"></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2021 By oceanyouth</div><div class="footer_custom_text">你好，欢迎走进海与少年的世界！</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="font-plus" type="button" title="放大字体"><i class="fas fa-plus"></i></button><button id="font-minus" type="button" title="缩小字体"><i class="fas fa-minus"></i></button><button id="translateLink" type="button" title="简繁转换">简</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="chat_btn" type="button" title="rightside.chat_btn"><i class="fas fa-sms"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>function loadLivere () {
+  if (typeof LivereTower === 'object') {
+    window.LivereTower.init()
+  }
+  else {
+    (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+    })(document, 'script');
+  }
+}
+
+if ('Livere' === 'Livere' || !false) {
+  if (false) btf.loadComment(document.getElementById('lv-container'), loadLivere)
+  else loadLivere()
+}
+else {
+  function loadOtherComment () {
+    loadLivere()
+  }
+}</script></div><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = [
+  'title',
+  '#config-diff',
+  '#body-wrap',
+  '#rightside-config-hide',
+  '#rightside-config-show',
+  '.js-pjax'
+]
+
+if (true) {
+  pjaxSelectors.unshift('meta[property="og:image"]', 'meta[property="og:title"]', 'meta[property="og:url"]')
+}
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.removeEventListener('scroll', window.tocScrollFn)
+  window.removeEventListener('scroll', scrollCollect)
+
+  typeof preloader === 'object' && preloader.initLoading()
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // Analytics
+  if (false) {
+    MtaH5.pgv()
+  }
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+
+  typeof preloader === 'object' && preloader.endLoading()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
