@@ -1,0 +1,510 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>程序设计入门——C语言（翁恺） | 漫画世界的漫画家</title><meta name="keywords" content="诚意正心 格物致知 止于至善"><meta name="author" content="学习梦想家"><meta name="copyright" content="学习梦想家"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="笔记来源：中国大学MOOC  第1周 程序设计与C语言1. 计算机和编程语言 计算思维：理解计算机是如何解决问题。人：what to do计算机：how to do  计算机语言编程语言不是与计算机交谈，而是告诉计算机做事情得过程与方法。计算（计算机能懂得语言及任务）——程序（人根据算法编写得计算机语言）——算法（人处理任务得方法）计算机的思维方式：计算机最擅长得是重复  算法我们要让计算机做计算">
+<meta property="og:type" content="article">
+<meta property="og:title" content="程序设计入门——C语言（翁恺）">
+<meta property="og:url" content="https://oceanyouth.github.io/2022/03/28/%E5%AD%A6%E4%B9%A0%E5%88%86%E5%8C%BA-08-%E7%BC%96%E7%A8%8B-2022-03-28-%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E5%85%A5%E9%97%A8%E2%80%94%E2%80%94C%E8%AF%AD%E8%A8%80%EF%BC%88%E7%BF%81%E6%81%BA%EF%BC%89/index.html">
+<meta property="og:site_name" content="漫画世界的漫画家">
+<meta property="og:description" content="笔记来源：中国大学MOOC  第1周 程序设计与C语言1. 计算机和编程语言 计算思维：理解计算机是如何解决问题。人：what to do计算机：how to do  计算机语言编程语言不是与计算机交谈，而是告诉计算机做事情得过程与方法。计算（计算机能懂得语言及任务）——程序（人根据算法编写得计算机语言）——算法（人处理任务得方法）计算机的思维方式：计算机最擅长得是重复  算法我们要让计算机做计算">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://oceanyouth.github.io/img/cover%20(27).jpg">
+<meta property="article:published_time" content="2022-03-28T11:29:24.000Z">
+<meta property="article:modified_time" content="2022-04-24T14:57:15.040Z">
+<meta property="article:author" content="学习梦想家">
+<meta property="article:tag" content="诚意正心 格物致知 止于至善">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://oceanyouth.github.io/img/cover%20(27).jpg"><link rel="shortcut icon" href="/./img/avatar.jpg"><link rel="canonical" href="https://oceanyouth.github.io/2022/03/28/%E5%AD%A6%E4%B9%A0%E5%88%86%E5%8C%BA-08-%E7%BC%96%E7%A8%8B-2022-03-28-%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E5%85%A5%E9%97%A8%E2%80%94%E2%80%94C%E8%AF%AD%E8%A8%80%EF%BC%88%E7%BF%81%E6%81%BA%EF%BC%89/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":10,"languages":{"author":"作者: 学习梦想家","link":"链接: ","source":"来源: 漫画世界的漫画家","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isanchor: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '程序设计入门——C语言（翁恺）',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: true,
+  isToc: true,
+  postUpdate: '2022-04-24 22:57:15'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const fontSizeVal = saveToLocal.get('global-font-size')
+    if (fontSizeVal !== undefined) {
+      document.documentElement.style.setProperty('--global-font-size', fontSizeVal + 'px')
+    }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    document.addEventListener('pjax:complete', detectApple)})(window)</script><link rel="stylesheet" href="/css/style.css"><meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="漫画世界的漫画家" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/./img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">53</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">22</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 多媒体</span><i class="fas fa-chevron-down expand hide"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/musics/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/gallerys/"><i class="fa-fw fas fa-image"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li><li><a class="site-page child" href="/animations/"><i class="fa-fw fas fa-video"></i><span> 国漫</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/./img/cover%20(27).jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">漫画世界的漫画家</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 多媒体</span><i class="fas fa-chevron-down expand hide"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/musics/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/gallerys/"><i class="fa-fw fas fa-image"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li><li><a class="site-page child" href="/animations/"><i class="fa-fw fas fa-video"></i><span> 国漫</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">程序设计入门——C语言（翁恺）</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-03-28T11:29:24.000Z" title="发表于 2022-03-28 19:29:24">2022-03-28</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-04-24T14:57:15.040Z" title="更新于 2022-04-24 22:57:15">2022-04-24</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">4.3k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>14分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="程序设计入门——C语言（翁恺）"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>笔记来源：<a target="_blank" rel="noopener" href="https://www.icourse163.org/learn/ZJU-199001?tid=1467021443#/learn/content?type=detail&id=1247355244&sm=1">中国大学MOOC</a></p>
+<hr>
+<h1 id="第1周-程序设计与C语言"><a href="#第1周-程序设计与C语言" class="headerlink" title="第1周 程序设计与C语言"></a>第1周 程序设计与C语言</h1><h2 id="1-计算机和编程语言"><a href="#1-计算机和编程语言" class="headerlink" title="1. 计算机和编程语言"></a>1. 计算机和编程语言</h2><ul>
+<li><p>计算思维：理解计算机是如何解决问题。<br>人：what to do<br>计算机：how to do</p>
+</li>
+<li><p>计算机语言<br>编程语言不是与计算机交谈，而是告诉计算机做事情得过程与方法。<br>计算（计算机能懂得语言及任务）——程序（人根据算法编写得计算机语言）——算法（人处理任务得方法）<br>计算机的思维方式：计算机最擅长得是重复</p>
+</li>
+<li><p>算法<br>我们要让计算机做计算，就需要找出计算的步骤，然后用编程语言写出来计算机做的所有的事情都叫做计算。</p>
+</li>
+<li><p>程序的执行<br>解释：借助一个程序，那个程序能试图理解你的程序，然后按照你的要求执行<br>编译：借助一个程序，就像一个翻译，把你的程序翻译成计算机真正能懂的语言——机器语言——写的程序，然后，这个机器语言写的程序就能直接执行了。<br>程序执行方式：解释语言 vs. 编译型语言*</p>
+<ul>
+<li>语言本身无编译/解释之分</li>
+<li>常用的执行方式而已</li>
+<li>解释型语言有特殊的计算能力</li>
+<li>编译型语言有确定的运算性能</li>
+</ul>
+</li>
+<li><p>常见问题<br>Q：编译执行与解释执行<br>有的编程语言，源代码经过编译后形成目标代码，但是这样的目标代码不能直接在CPU上执行，而是需要由一个仿真器程序来解释执行。这样的执行方式是编译的还是解释的？<br>A1：<br>语言本身没有解释/编译之分，我们不能说它是编译型语言或者解释型语言，只是编译或者解释是我们常用的方式。如Java是需要编译的，但是没有直接编译成机器语言，而是编译成字节码，然后在Java虚拟机上用解释的方式执行字节码，Python也是使用了类似的方式。<br>A2：<br>任何一种程序都没有绝对的类型，此处是先编译后解释。<br>A3：<br>有人认为我们不能将一种编程语言绝对化，比如C语言，不能就说他是编译型语言，也有人曾经做过C语言的解释器，这样C语言就可以解释运行。同理，也有人做过python的编译器。只是我们平时比较常用某种方式而已。老师题目中说的情况让我想起了Java语言。Java语言是先通过javac.exe进行编译，编译后生成一个.class的文件，但是计算机不能直接执行.class文件，所以需要用java命令调用Java虚拟机JVM（题中的仿真程序）来解释执行。而我们都知道，Java被大家称作解释型语言，所以我觉得这道题的语言是解释型语言，执行方式是先编译后解释。另外，我认为编译型语言更多倾向于将高级语言直接编译成二进制可执行文件的语言，比如C语言。</p>
+</li>
+<li><p>知识拓展</p>
+<ul>
+<li>计算机语言分类：<br>机器语言：计算机执行的二进制命令，都是0和1表示的<br>汇编语言：用助记符代替机器指令的操作码（如：ADD表示加法）<br>高级语言：更简单，符合人们的习惯，也更容易理解和修改。高级语言经过编译器编译之后可以得到目标程序。（如：C++、JAVA）</li>
+<li>机器语言、汇编语言、高级语言的区别：<br>依次接近人类自然语言的表达方式、代码效率依次变低、语言越来越高级</li>
+<li>机器语言、汇编语言、高级语言的联系：<br>高级语言要通过编译程序翻译成汇编代码，汇编语言要通过汇编得到机器语言，计算机才能执行。</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-C语言"><a href="#2-C语言" class="headerlink" title="2. C语言"></a>2. C语言</h2><ul>
+<li>为什么是C？<br>在操作系统和嵌入式等领域的应用很难被其它语言替代。</li>
+<li>现代的编程语言在语法上的差异很小<br>几乎都是C-like语言<br>语言的能力/适用领域主要是由<br>库和<br>传统所决定的<br>it was the summer of 69</li>
+<li>C语言<ul>
+<li>C语言是从B语言发展而来的，B语言是从BCPL发展而来的，BCPL是从FORTRAN发展而来的</li>
+<li>BCPL和B都支持<strong>指针</strong>间接方式，所以C也支持了</li>
+<li>C语言还受到了PL/I的影响，还和PDP-I1的机器语言有很大的关系</li>
+<li>1973年3月，第三版的Unix上出现了C语言的编译器</li>
+<li>1973年11月，第四版的Unix（System Four）发布了这个版本是完全用C语言重新写的</li>
+</ul>
+</li>
+<li>C的发展与版本-K &amp; R<ul>
+<li>经典C</li>
+<li>又被叫做“K &amp; R the C”</li>
+<li>The C Programming Language，by Brian Kernighan and Dennis Ritchie，2nd Edition，Prentice Hall</li>
+</ul>
+</li>
+<li>C的发展与版本-标准<ul>
+<li>1989年ANSI发布了一个标准——ANSI C</li>
+<li>1990年ISO接受了ANSI的标准——C89</li>
+<li>C的标准在1995年和1999年两次更新——C95和C99</li>
+<li>所有的当代编译器都支持C99了</li>
+</ul>
+</li>
+<li>C语言用在哪里？<ul>
+<li>操作系统</li>
+<li>嵌入式系统</li>
+<li>驱动程序</li>
+<li>底层驱动</li>
+<li>图形引擎、图像处理、声音、效果</li>
+</ul>
+</li>
+<li>C语言是一种工业语言<ul>
+<li>开发效率&gt;&gt;学习过程<br>开发效率&gt;&gt;开发乐趣<br>日常应用很少直接用C语言编写<br>学习C的过程主要是写练习代码<br>而非真实软件</li>
+</ul>
+</li>
+<li>编译 → 运行<ul>
+<li>编辑器 + 编译器 / IDE（集成开发环境）</li>
+</ul>
+</li>
+<li>编程软件<ul>
+<li>推荐的编程软件——<a target="_blank" rel="noopener" href="https://sourceforge.net/projects/orwelldevcpp/?source=directory">Dev C++</a><ul>
+<li>免费、安装简单、不用建工程</li>
+</ul>
+</li>
+<li>其他选择<ul>
+<li>MS Visual Studio Express（Windows）</li>
+<li>Xcode（Mac OS X）</li>
+<li>Eclipse-CDT</li>
+<li>Geany（和MinGW一起）</li>
+<li>Sublime（和MinGW-起）</li>
+<li>vim/emacs（和MinGW-起）</li>
+</ul>
+</li>
+<li>Visual C++、Turbo C和DEV-C++都是C语言的IDE，即集成开发环境，没什么实质上的区别，只是开发商不一样，UI界面不一样。</li>
+<li>GCC（GNU Compiler Collection，GNU编译器套件）是由GNU开发的编程语言译器。GNU编译器套件包括C、C++、Objective-C、Fortran、Java、Ada和Go语言前端，也包括了这些语言的库（如libstdc++++，libgcj等。）</li>
+<li>采用VS code软件进行C语言编程<ul>
+<li>VS Code是轻量级文本编辑器</li>
+<li>安装Microsoft C / C ++扩展，相当于C语言的编辑器，C / C ++扩展不包括C ++编译器或调试器。“扩展C/C++”可以做语法的高亮，认识C语言的一些语法。</li>
+<li>安装C语言的编译器，MinGW。MinGW，是Minimalist GNU for Windows的缩写。</li>
+<li>安装code runner扩展，运行代码。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>C语言编译器发展历史<ul>
+<li>“UNIX is simple and coherent, but it takes a genius (or at any rate, a programmer) to understand and appreciate its simplicity.”-Dennis Ritchie Unix是20世纪70年代初出现的一个操作系统，除了作为网络操作系统之外，还可以作为单机操作系统使用。Unix作为一种开发平台和台式操作系统获得了广泛使用，主要用于工程应用和科学计算等领域。</li>
+<li>C语言是和UNIX一起成长起来的。<strong>Edition 3</strong> introduced the C Programming Language, in February of 1973.</li>
+<li><strong>Edition 4, 973.</strong> <ul>
+<li>C was derived from B which was derived from BCPL, which was derived from FORTRAN.</li>
+<li> Both BCPL and B (and therefore C) contained the notion of pointer indirection. </li>
+<li> In November of 1973, the fourth edition (System Four) was released, and Unix itself was rewritten entirely in C, thus making the operating system highly portable to new machine hardware.</li>
+</ul>
+</li>
+<li><strong>The C</strong>. <ul>
+<li>The C programming language was designed by Dennis Ritchie at Bell Laboratories in the early 1970s.</li>
+<li>Traditionally used for systems programming, though this may be changing in favor of C++.</li>
+<li>Traditional C:<ul>
+<li>The C Programming Language, by Brian Kernighan and Dennis Ritchie, 2nd Edition, Prentice Hall </li>
+<li>Referred to as K&amp;R</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>CC编译器（UNIX机器自带的）→GCC（新兴的在UNIX，90年代在LINUX）→MSVC（DOS上，微软的，后面VC 6和VS 20xx都是微软的cc，但GCC更强大）</li>
+<li>GCC的发展<img src="https://cdn.jsdelivr.net/gh/oceanyouth/picgodemo@main/img/20220330133717.png" alt="20220330133717"></li>
+<li>Windows上GCC的实施过程<img src="https://cdn.jsdelivr.net/gh/oceanyouth/picgodemo@main/img/20220330133803.png" alt="20220330133803"></li>
+<li>Windows上GCC的实施方案<img src="https://cdn.jsdelivr.net/gh/oceanyouth/picgodemo@main/img/20220330133840.png" alt="20220330133840"></li>
+</ul>
+</li>
+</ul>
+<h2 id="3-第一个程序"><a href="#3-第一个程序" class="headerlink" title="3. 第一个程序"></a>3. 第一个程序</h2><ul>
+<li><p>初学C的困惑</p>
+<ul>
+<li>用什么软件好？</li>
+<li>选择太多有时候是个麻烦</li>
+<li>当代语言往往只有一个编程软件可用</li>
+<li>那就Dev C++ 5.6.3吧</li>
+</ul>
+</li>
+<li><p>第一个程序</p>
+  <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Hello World!\n&quot;</span>); <span class="comment">/*printf输出函数，\n代表输出结果后面换行*/</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>C语言运行时出现黑黑的窗口：命令行、终端、控制台。</li>
+<li>.c文件一定要保存再编译执行</li>
+</ol>
+</li>
+<li><p>程序框架</p>
+  <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>  在学习函数之前一直应用该“程序框架”。</p>
+</li>
+<li><p>做计算</p>
+  <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;Hello World! \n&quot;</span>); <span class="comment">//字符串输出</span></span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;Hello, World! \n&quot;</span>);</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, <span class="number">23</span>+<span class="number">43</span>); <span class="comment">//数学运算结果</span></span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;23 + 43 = %d\n&quot;</span>, <span class="number">23</span>+<span class="number">43</span>); <span class="comment">//数学运算过程及结果</span></span><br><span class="line"><span class="comment">//printf(&quot;你好！ \n&quot;) //中文会出现乱码</span></span><br></pre></td></tr></table></figure>
+<p>  格式符：%d——整型，读入十进制整数；%f——浮点型，用来输出实数，以小数形式输出；%c——字符型，读入一个字符；%s——字符串，读入一个字符串；%.nf——n表示小数位数。</p>
+</li>
+<li><p>格式化输入函数</p>
+  <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> price = <span class="number">0</span>; <span class="comment">//变量初始化</span></span><br><span class="line"></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;请输入金额（元）：&quot;</span>);</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;price); <span class="comment">//格式化输入函数，从标准输入设备(即键盘) 读取输入的信息。</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> change = <span class="number">100</span> - price;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;找您%d元。\n&quot;</span>, change);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>scanf()函数是从标准输入流stdio中读取内容的通用子程序，可以读入全部固有类型的数据并自动转换成机内形式。简单来说就是格式化输入函数，一般是从标准输入设备(即键盘) 读取输入的信息。</p>
+</li>
+<li><p>scanf函数的基本格式：scanf（“格式符”，输入参数）</p>
+</li>
+<li><p>scanf注意事项：</p>
+<ol>
+<li><p>在scanf 的“输入参数”中，变量前面的取地址符&amp;不要忘记。</p>
+</li>
+<li><p>scanf 中双引号内，除了“输入控制符”外什么都不要写。</p>
+</li>
+<li><p>“输出控制符”和“输出参数”无论在“顺序上”还是在“个数上”一定要一一对应。</p>
+</li>
+<li><p>“输入控制符”的类型和变量所定义的类型一定要一致。对于从键盘输入的数据的类 型，数据是用户输入的，程序员是无法决定的，所以在写程序时要考虑容错处理。</p>
+</li>
+<li><p>使用scanf之前先用printf提示输入。</p>
+</li>
+</ol>
+</li>
+<li><p>VS Code中文输出乱码<br>  系统的区域设置里面的全球语言支持。<br>  参考：<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_51723388/article/details/124171357">VS code（Visual Studio Code）乱码解决</a></p>
+</li>
+</ul>
+</li>
+<li><p>VS Code单个.c文件和多个.c文件（多文件的管理能力）</p>
+<ul>
+<li>VS Code里面<strong>多文件</strong>的管理叫workspace，中文叫工作区。</li>
+<li>一个工程中有多个.c文件，方法一可以运行所有文件；方法二makefile。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1 id="第2周-计算"><a href="#第2周-计算" class="headerlink" title="第2周 计算"></a>第2周 计算</h1><h2 id="1-变量"><a href="#1-变量" class="headerlink" title="1. 变量"></a>1. 变量</h2><ul>
+<li>变量：一个保存数据的地方，当我们需要在程序里保存数据时，就需要一个变量来保存它。</li>
+<li>赋值和初始化：在C语言中区别不大，在C++中区别较大。C语言中并没有强制要求所有变量都在定义的地方做初始化，但是所有的变量在第一次被使用（出现在赋值运算符的右边）之前应该被赋值一次。<strong>每一个变量单独赋值。</strong></li>
+<li>变量类型：C是一种有类型的语言，所有的变量在使用之前必须定义或声明，所有的变量必须具有确定的数据类型。<strong>C99可以边定义变量边计算</strong>，而ANSI C只能在代码开头的地方定义变量。</li>
+<li>读整数：scanf()；printf()输出</li>
+<li>常量：定义常量的目的是可以通过定义名知道数字所代表的含义。直接写在程序里的数字我们称为直接量（literal）。<strong>定义常量的好处，容易知道常量的意义，另外容易修改。</strong><h2 id="2-数据类型"><a href="#2-数据类型" class="headerlink" title="2. 数据类型"></a>2. 数据类型</h2>int<br>double</li>
+</ul>
+<h2 id="3-表达式"><a href="#3-表达式" class="headerlink" title="3. 表达式"></a>3. 表达式</h2><p><img src="https://cdn.jsdelivr.net/gh/oceanyouth/picgodemo@main/img/20220418224959.png" alt="20220418224959"></p>
+<p>C语言，赋值运算符，赋值也是运算，也有结果。即“=”也是运算符。<br>嵌入式赋值，可读性不好。</p>
+<p>复合赋值：“+=”；“*=”；“/=”；</p>
+<p>递增递减运算符：<br>a++<br>a+=<br>a=a+1</p>
+<p>a++原来的值</p>
+<p>++a以后的值<br>可以单独使用，但不建议组合使用</p>
+<p>运算符<br>算子<br>单目运算符<br>双目运算符</p>
+<h2 id="4-在线评判系统"><a href="#4-在线评判系统" class="headerlink" title="4. 在线评判系统"></a>4. 在线评判系统</h2><p><a target="_blank" rel="noopener" href="https://pintia.cn/problem-sets?tab=1&filter=all">PTA | 程序设计类实验辅助教学平台</a></p>
+<h1 id="第3周-判断与循环"><a href="#第3周-判断与循环" class="headerlink" title="第3周 判断与循环"></a>第3周 判断与循环</h1><h2 id="判断"><a href="#判断" class="headerlink" title="判断"></a>判断</h2><p>一个基本的if语句由一个关键字if开头，跟上在括号里的一个表示条件的逻辑表达式，然后是<strong>一对大括号“{}”之间的若干条语句</strong>。如果表示条件的逻辑表达式的结果为true，那么就执行后面跟着的这对大括号中的语句，否则就跳过这些语句不执行，而继续下面的其他语句。</p>
+<p>强调if和else后面要用{}，如果不用，只能跟单句。</p>
+<p>C语言提供了六个关系运算符：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">==	相等</span><br><span class="line">!=	不相等</span><br><span class="line">&gt;	大于</span><br><span class="line">&gt;=	大于或等于</span><br><span class="line">&lt;	小于</span><br><span class="line">&lt;=	小于或等于</span><br></pre></td></tr></table></figure>
+<p>优先级：<br>算数运算符 &gt; 关系运算符 &gt; 赋值运算符</p>
+<p>“==    相等”和“!=    不相等”的优先级比其他低。</p>
+<p>注释comment<br>单行注释//，C99代码独有的<br>多行注释/* */</p>
+<p>流程图</p>
+<h2 id="循环"><a href="#循环" class="headerlink" title="循环"></a>循环</h2><p>if语句可以判断条件是否满足，满足时才做相应的动作，而循环语句可以在满足条件时，不断地重复执行一些动作。</p>
+<p>重复执行的语句（循环语句）可以多次执行其他语句，它检查一个逻辑条件是否满足，只在满足的时候执行它的循环体。</p>
+<p>while语句是一个循环语句，它会首先判断一个条件是否满足，如果条件满足，则执行后面紧跟着的语句或语句括号，然后再次判断条件是否满足，如果条件满足则再次执行，直到条件不满足为止。后面紧跟的语句或语句括号，就是循环体。</p>
+<p>do-while循环和while循环很像，唯一的区别是我们在循环体执行结束的时候才来判断条件。也就是说，无论如何，循环都会执行至少一遍，然后再来判断条件。与while循环相同的是，条件满足时执行循环，条件不满足时结束循环。</p>
+<p>计算机描述的是步骤，不是关系也不是说明。</p>
+<p>调试过程，可以在程序中间加入printf()函数进行验证。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (初始条件;循环条件;循环每一轮要做的事情) &#123;循环体&#125;</span><br></pre></td></tr></table></figure>
+
+<p>for循环像一个计数循环：设定一个计数器，初始化它，然后在计数器到达某值之前，重复执行循环体，而每执行一轮循环，计数器值以一定步进进行调整。</p>
+<p>for(count=10;count&gt;0;count–)<br>就读成：“对于一开始的count=10，当count&gt;0时，重复做循环体，每一轮循环在做完循环体内语句后，使得count–。”</p>
+<p>如果有固定次数，用for<br>如果必须执行一次，用do_while<br>其他情况用while</p>
+<h1 id="第4周-进一步的判断与循环"><a href="#第4周-进一步的判断与循环" class="headerlink" title="第4周 进一步的判断与循环"></a>第4周 进一步的判断与循环</h1><p>逻辑类型<br>bool</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdbool.h&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<p>逻辑运算<br><img src="https://cdn.jsdelivr.net/gh/oceanyouth/picgodemo@main/img/20220420100106.png" alt="20220420100106"></p>
+<p>单目运算的优先级高于双目运算的优先级<br><img src="https://cdn.jsdelivr.net/gh/oceanyouth/picgodemo@main/img/20220420100351.png" alt="20220420100351"></p>
+<p>短路：逻辑与运算，如果前面的条件不满足，后面的条件将不会执行。不建议将赋值或复合赋值组合进逻辑运算的表达式。</p>
+<p>条件运算</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">count = (count &gt;<span class="number">20</span>) ? count <span class="number">-10</span> : count +<span class="number">10</span>; <span class="comment">//条件，条件满足时的值和条件不满足时的值。等价于“if () &#123;&#125; else &#123;&#125;”，是编程语言早期留下来的格式，太过复杂，特别是在嵌套的时候。</span></span><br></pre></td></tr></table></figure>
+<p>逗号表达式，用于FOR的嵌套。<br>逗号用来连接两个表达式，并以其右边的表达式的值作为它的结果。<strong>逗号的优先级是所有的运算符中最低的</strong>，所以它两边的表达式会先计算；逗号的组合关系是自左向右，所以左边的表达式会先计算，而右边的表达式的值就留下来作为逗号运算的结果。</p>
+<p>由于语言会出现级联和嵌套，语句复杂了就比较难判断，所以建议：在if或else后面总是用{}，即使只有一条语句时。</p>
+<p>级联if else：逐条运算，计算时间久</p>
+<p>多路分支 switch case：根据条件选择，case是入口，break是出口。而且控制表达式需要是整数型。</p>
+<p>难的是把问题转化为程序。<br>计数循环</p>
+<p>算平均数：变量→算法→流程图→程序</p>
+<p>猜数游戏</p>
+<p>随机数：rand()</p>
+<p>整数的分解：整数%10得到个位数；/10去掉个位数；(/10)%10得到原来的十位数。</p>
+<p>判断和循环常见错误：<br>if的{}，形成代码块。<br>if后面没有;<br>if ()里面=和==<br>代码风格</p>
+<h1 id="第5周-循环控制"><a href="#第5周-循环控制" class="headerlink" title="第5周 循环控制"></a>第5周 循环控制</h1><h1 id="第6周-数组与函数"><a href="#第6周-数组与函数" class="headerlink" title="第6周 数组与函数"></a>第6周 数组与函数</h1></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">学习梦想家</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://oceanyouth.github.io/2022/03/28/%E5%AD%A6%E4%B9%A0%E5%88%86%E5%8C%BA-08-%E7%BC%96%E7%A8%8B-2022-03-28-%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E5%85%A5%E9%97%A8%E2%80%94%E2%80%94C%E8%AF%AD%E8%A8%80%EF%BC%88%E7%BF%81%E6%81%BA%EF%BC%89/">https://oceanyouth.github.io/2022/03/28/%E5%AD%A6%E4%B9%A0%E5%88%86%E5%8C%BA-08-%E7%BC%96%E7%A8%8B-2022-03-28-%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E5%85%A5%E9%97%A8%E2%80%94%E2%80%94C%E8%AF%AD%E8%A8%80%EF%BC%88%E7%BF%81%E6%81%BA%EF%BC%89/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://oceanyouth.github.io" target="_blank">漫画世界的漫画家</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="/./img/cover%20(27).jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button button--animated"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/wechat.jpg" target="_blank"><img class="post-qr-code-img" src="/img/wechat.jpg" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="/img/alipay.jpg" target="_blank"><img class="post-qr-code-img" src="/img/alipay.jpg" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/05/29/%E5%AD%A6%E4%B9%A0%E5%88%86%E5%8C%BA-01-%E9%80%9A%E8%AF%86-2022-05-29-%E5%85%AC%E7%90%86%E3%80%81%E5%AE%9A%E5%BE%8B%E3%80%81%E5%8E%9F%E7%90%86%E3%80%81%E5%AE%9A%E7%90%86%E3%80%81%E5%AE%9A%E5%88%99/"><img class="prev-cover" src="/./img/cover%20(8).jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">公理、定律、原理、定理、定则</div></div></a></div><div class="next-post pull-right"><a href="/2022/03/14/%E5%AD%A6%E4%B9%A0%E5%88%86%E5%8C%BA-07-%E6%8E%A7%E5%88%B6-2022-03-14-%E6%8E%A7%E5%88%B6%E7%90%86%E8%AE%BA%E7%9A%84%E5%8F%91%E5%B1%95%E4%B8%8E%E4%B8%80%E4%BA%9B%E5%AD%98%E5%9C%A8%E7%9A%84%E9%97%AE%E9%A2%98-%E6%AE%B5%E5%BF%97%E7%94%9F/"><img class="next-cover" src="/./img/cover%20(12).jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">控制理论的发展与一些存在的问题_段志生</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="lv-container" data-id="city" data-uid="MTAyMC81NDYxMS8zMTA4Mg=="></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/./img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">学习梦想家</div><div class="author-info__description">少年！在知识的海洋遨游吧！</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">53</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">22</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/oceanyouth"><i class="fab fa-github"></i><span>Into My World</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/oceanyouth" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:18352537966@163.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">记录分享学习与生活！</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC1%E5%91%A8-%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E4%B8%8EC%E8%AF%AD%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">第1周 程序设计与C语言</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%92%8C%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80"><span class="toc-number">1.1.</span> <span class="toc-text">1. 计算机和编程语言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-C%E8%AF%AD%E8%A8%80"><span class="toc-number">1.2.</span> <span class="toc-text">2. C语言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E7%AC%AC%E4%B8%80%E4%B8%AA%E7%A8%8B%E5%BA%8F"><span class="toc-number">1.3.</span> <span class="toc-text">3. 第一个程序</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC2%E5%91%A8-%E8%AE%A1%E7%AE%97"><span class="toc-number">2.</span> <span class="toc-text">第2周 计算</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%8F%98%E9%87%8F"><span class="toc-number">2.1.</span> <span class="toc-text">1. 变量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">2.2.</span> <span class="toc-text">2. 数据类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-number">2.3.</span> <span class="toc-text">3. 表达式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E5%9C%A8%E7%BA%BF%E8%AF%84%E5%88%A4%E7%B3%BB%E7%BB%9F"><span class="toc-number">2.4.</span> <span class="toc-text">4. 在线评判系统</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC3%E5%91%A8-%E5%88%A4%E6%96%AD%E4%B8%8E%E5%BE%AA%E7%8E%AF"><span class="toc-number">3.</span> <span class="toc-text">第3周 判断与循环</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%A4%E6%96%AD"><span class="toc-number">3.1.</span> <span class="toc-text">判断</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BE%AA%E7%8E%AF"><span class="toc-number">3.2.</span> <span class="toc-text">循环</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC4%E5%91%A8-%E8%BF%9B%E4%B8%80%E6%AD%A5%E7%9A%84%E5%88%A4%E6%96%AD%E4%B8%8E%E5%BE%AA%E7%8E%AF"><span class="toc-number">4.</span> <span class="toc-text">第4周 进一步的判断与循环</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC5%E5%91%A8-%E5%BE%AA%E7%8E%AF%E6%8E%A7%E5%88%B6"><span class="toc-number">5.</span> <span class="toc-text">第5周 循环控制</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC6%E5%91%A8-%E6%95%B0%E7%BB%84%E4%B8%8E%E5%87%BD%E6%95%B0"><span class="toc-number">6.</span> <span class="toc-text">第6周 数组与函数</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/08/03/%E5%AD%A6%E4%B9%A0%E5%88%86%E5%8C%BA-01-%E9%80%9A%E8%AF%86-2022-08-03-%E8%81%8C%E4%B8%9A-%E4%B8%93%E4%B8%9A%E6%8A%80%E6%9C%AF%E8%B5%84%E6%A0%BC/" title="职业/专业技术资格"><img src="/./img/cover%20(7).jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="职业/专业技术资格"/></a><div class="content"><a class="title" href="/2022/08/03/%E5%AD%A6%E4%B9%A0%E5%88%86%E5%8C%BA-01-%E9%80%9A%E8%AF%86-2022-08-03-%E8%81%8C%E4%B8%9A-%E4%B8%93%E4%B8%9A%E6%8A%80%E6%9C%AF%E8%B5%84%E6%A0%BC/" title="职业/专业技术资格">职业/专业技术资格</a><time datetime="2022-08-03T14:22:11.000Z" title="发表于 2022-08-03 22:22:11">2022-08-03</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/07/27/%E5%AD%A6%E4%B9%A0%E5%88%86%E5%8C%BA-01-%E9%80%9A%E8%AF%86-2022-07-27-%E4%B8%93%E4%B8%9A%E5%90%8D%E8%AF%8D/" title="专业名词"><img src="/./img/cover%20(43).jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="专业名词"/></a><div class="content"><a class="title" href="/2022/07/27/%E5%AD%A6%E4%B9%A0%E5%88%86%E5%8C%BA-01-%E9%80%9A%E8%AF%86-2022-07-27-%E4%B8%93%E4%B8%9A%E5%90%8D%E8%AF%8D/" title="专业名词">专业名词</a><time datetime="2022-07-27T14:03:53.000Z" title="发表于 2022-07-27 22:03:53">2022-07-27</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/07/26/%E5%AD%A6%E4%B9%A0%E5%88%86%E5%8C%BA-01-%E9%80%9A%E8%AF%86-2022-07-26-%E6%96%87%E7%8C%AE%E7%AE%A1%E7%90%86%E5%8F%8A%E7%AC%94%E8%AE%B0/" title="文献管理及笔记"><img src="/./img/cover%20(7).jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="文献管理及笔记"/></a><div class="content"><a class="title" href="/2022/07/26/%E5%AD%A6%E4%B9%A0%E5%88%86%E5%8C%BA-01-%E9%80%9A%E8%AF%86-2022-07-26-%E6%96%87%E7%8C%AE%E7%AE%A1%E7%90%86%E5%8F%8A%E7%AC%94%E8%AE%B0/" title="文献管理及笔记">文献管理及笔记</a><time datetime="2022-07-26T03:08:48.000Z" title="发表于 2022-07-26 11:08:48">2022-07-26</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/07/25/%E5%AD%A6%E4%B9%A0%E5%88%86%E5%8C%BA-03-%E5%8A%9B%E5%AD%A6-2022-07-25-%E9%98%BB%E5%B0%BC/" title="阻尼"><img src="/./img/cover%20(39).jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="阻尼"/></a><div class="content"><a class="title" href="/2022/07/25/%E5%AD%A6%E4%B9%A0%E5%88%86%E5%8C%BA-03-%E5%8A%9B%E5%AD%A6-2022-07-25-%E9%98%BB%E5%B0%BC/" title="阻尼">阻尼</a><time datetime="2022-07-25T13:15:56.000Z" title="发表于 2022-07-25 21:15:56">2022-07-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/07/25/%E5%AD%A6%E4%B9%A0%E5%88%86%E5%8C%BA-07-%E6%8E%A7%E5%88%B6-2022-07-25-%E6%8E%A7%E5%88%B6%E7%90%86%E8%AE%BA%E2%80%94%E2%80%94%E9%A5%B1%E5%92%8C%E4%B8%8E%E6%AD%BB%E5%8C%BA/" title="控制理论——饱和与死区"><img src="/./img/cover%20(45).jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="控制理论——饱和与死区"/></a><div class="content"><a class="title" href="/2022/07/25/%E5%AD%A6%E4%B9%A0%E5%88%86%E5%8C%BA-07-%E6%8E%A7%E5%88%B6-2022-07-25-%E6%8E%A7%E5%88%B6%E7%90%86%E8%AE%BA%E2%80%94%E2%80%94%E9%A5%B1%E5%92%8C%E4%B8%8E%E6%AD%BB%E5%8C%BA/" title="控制理论——饱和与死区">控制理论——饱和与死区</a><time datetime="2022-07-25T11:46:40.000Z" title="发表于 2022-07-25 19:46:40">2022-07-25</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2021 - 2022 By 学习梦想家</div><div class="footer_custom_text">你好，欢迎走进漫画家的世界！</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="font-plus" type="button" title="放大字体"><i class="fas fa-plus"></i></button><button id="font-minus" type="button" title="缩小字体"><i class="fas fa-minus"></i></button><button id="translateLink" type="button" title="简繁转换">简</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>function loadLivere () {
+  if (typeof LivereTower === 'object') {
+    window.LivereTower.init()
+  }
+  else {
+    (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+    })(document, 'script');
+  }
+}
+
+if ('Livere' === 'Livere' || !false) {
+  if (false) btf.loadComment(document.getElementById('lv-container'), loadLivere)
+  else loadLivere()
+}
+else {
+  function loadOtherComment () {
+    loadLivere()
+  }
+}</script></div><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = [
+  'title',
+  '#config-diff',
+  '#body-wrap',
+  '#rightside-config-hide',
+  '#rightside-config-show',
+  '.js-pjax'
+]
+
+if (true) {
+  pjaxSelectors.unshift('meta[property="og:image"]', 'meta[property="og:title"]', 'meta[property="og:url"]')
+}
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.removeEventListener('scroll', window.tocScrollFn)
+  window.removeEventListener('scroll', scrollCollect)
+
+  typeof preloader === 'object' && preloader.initLoading()
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // Analytics
+  if (false) {
+    MtaH5.pgv()
+  }
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+
+  typeof preloader === 'object' && preloader.endLoading()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
