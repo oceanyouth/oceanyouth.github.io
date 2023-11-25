@@ -1,0 +1,450 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>机器人可视化仿真 | 漫画世界的漫画家</title><meta name="keywords" content="诚意正心 格物致知 止于至善"><meta name="author" content="学习梦想家"><meta name="copyright" content="学习梦想家"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="2022-11-22 19:48:21 Written by Fu, Jian    机器人常用可视化仿真工具 仿真环境 Gazebo 和 RViz ROS入门（三）：gazebo详解 深海机器人视景仿真系统研究 水下AUV虚拟仿真实验 仿真 | 机器人常用可视化仿真工具       2023-03-13 23:09:23 Written">
+<meta property="og:type" content="article">
+<meta property="og:title" content="机器人可视化仿真">
+<meta property="og:url" content="https://oceanyouth.github.io/2022/11/22/%E4%B8%B4%E6%97%B6%E5%88%86%E5%8C%BA-2022-11-22-%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%8F%AF%E8%A7%86%E5%8C%96%E4%BB%BF%E7%9C%9F/index.html">
+<meta property="og:site_name" content="漫画世界的漫画家">
+<meta property="og:description" content="2022-11-22 19:48:21 Written by Fu, Jian    机器人常用可视化仿真工具 仿真环境 Gazebo 和 RViz ROS入门（三）：gazebo详解 深海机器人视景仿真系统研究 水下AUV虚拟仿真实验 仿真 | 机器人常用可视化仿真工具       2023-03-13 23:09:23 Written">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://oceanyouth.github.io/img/cover%20(2).jpg">
+<meta property="article:published_time" content="2022-11-22T11:48:09.000Z">
+<meta property="article:modified_time" content="2023-03-16T01:09:25.432Z">
+<meta property="article:author" content="学习梦想家">
+<meta property="article:tag" content="诚意正心 格物致知 止于至善">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://oceanyouth.github.io/img/cover%20(2).jpg"><link rel="shortcut icon" href="/./img/avatar.jpg"><link rel="canonical" href="https://oceanyouth.github.io/2022/11/22/%E4%B8%B4%E6%97%B6%E5%88%86%E5%8C%BA-2022-11-22-%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%8F%AF%E8%A7%86%E5%8C%96%E4%BB%BF%E7%9C%9F/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":10,"languages":{"author":"作者: 学习梦想家","link":"链接: ","source":"来源: 漫画世界的漫画家","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isanchor: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '机器人可视化仿真',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: true,
+  isToc: false,
+  postUpdate: '2023-03-16 09:09:25'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const fontSizeVal = saveToLocal.get('global-font-size')
+    if (fontSizeVal !== undefined) {
+      document.documentElement.style.setProperty('--global-font-size', fontSizeVal + 'px')
+    }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    document.addEventListener('pjax:complete', detectApple)})(window)</script><link rel="stylesheet" href="/css/style.css"><meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="漫画世界的漫画家" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/./img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">96</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">43</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 文章</span><i class="fas fa-chevron-down expand hide"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 多媒体</span><i class="fas fa-chevron-down expand hide"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/musics/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/gallerys/"><i class="fa-fw fas fa-camera"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-film"></i><span> 电影</span></a></li><li><a class="site-page child" href="/televisions/"><i class="fa-fw fas fa-tv"></i><span> 电视</span></a></li><li><a class="site-page child" href="/animations/"><i class="fa-fw fas fa-robot"></i><span> 动漫</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 外链</span><i class="fas fa-chevron-down expand hide"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/languages/"><i class="fa-fw fas fa-language"></i><span> 语言</span></a></li><li><a class="site-page child" href="/forums/"><i class="fa-fw fas fa-comments"></i><span> 论坛</span></a></li><li><a class="site-page child" href="/moocs/"><i class="fa-fw fas fa-person-chalkboard"></i><span> 慕课</span></a></li><li><a class="site-page child" href="/scholars/"><i class="fa-fw fas fa-user-graduate"></i><span> 学者</span></a></li><li><a class="site-page child" href="/tools/"><i class="fa-fw fas fa-gear"></i><span> 工具</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/./img/cover%20(2).jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">漫画世界的漫画家</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 文章</span><i class="fas fa-chevron-down expand hide"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 多媒体</span><i class="fas fa-chevron-down expand hide"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/musics/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/gallerys/"><i class="fa-fw fas fa-camera"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-film"></i><span> 电影</span></a></li><li><a class="site-page child" href="/televisions/"><i class="fa-fw fas fa-tv"></i><span> 电视</span></a></li><li><a class="site-page child" href="/animations/"><i class="fa-fw fas fa-robot"></i><span> 动漫</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 外链</span><i class="fas fa-chevron-down expand hide"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/languages/"><i class="fa-fw fas fa-language"></i><span> 语言</span></a></li><li><a class="site-page child" href="/forums/"><i class="fa-fw fas fa-comments"></i><span> 论坛</span></a></li><li><a class="site-page child" href="/moocs/"><i class="fa-fw fas fa-person-chalkboard"></i><span> 慕课</span></a></li><li><a class="site-page child" href="/scholars/"><i class="fa-fw fas fa-user-graduate"></i><span> 学者</span></a></li><li><a class="site-page child" href="/tools/"><i class="fa-fw fas fa-gear"></i><span> 工具</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">机器人可视化仿真</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-11-22T11:48:09.000Z" title="发表于 2022-11-22 19:48:09">2022-11-22</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-03-16T01:09:25.432Z" title="更新于 2023-03-16 09:09:25">2023-03-16</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">2.9k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>9分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="机器人可视化仿真"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><table style="width:15%;">
+<colgroup>
+<col style="width: 15%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>2022-11-22 19:48:21 Written by Fu, Jian</td>
+</tr>
+</tbody>
+</table>
+<p><a
+target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/106364969?ivk_sa=1024320u">机器人常用可视化仿真工具</a></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/344898671">仿真环境 Gazebo 和
+RViz</a></p>
+<p><a
+target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/367660310">ROS入门（三）：gazebo详解</a></p>
+<p>深海机器人视景仿真系统研究</p>
+<p><a target="_blank" rel="noopener" href="http://mevlab.zju.edu.cn/vd/1/1">水下AUV虚拟仿真实验</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.yfworld.com/?p=5453">仿真 |
+机器人常用可视化仿真工具</a></p>
+<table style="width:15%;">
+<colgroup>
+<col style="width: 15%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>2023-03-13 23:09:23 Written by Fu, Jian</td>
+</tr>
+<tr class="even">
+<td># <a
+target="_blank" rel="noopener" href="https://blog.csdn.net/dyannacon/article/details/124830882">机器人仿真软件</a></td>
+</tr>
+<tr class="odd">
+<td>## 1、Gazebo
+Gazebo模拟器是一个免费的开源平台，可用于设计，开发，测试和可视化几乎任何类型的机器人。Gazebo可在Linux，Windows和Mac上运行，并且内置了对ROS（机器人操作系统）的支持。Gazebo支持多种高性能物理引擎，例如ODE，Bullet，Simbody和DART。它还使用ORGE
+3D图形引擎来渲染具有准确照明，阴影和纹理的高质量环境。Gazebo模拟器还附带了一些机器人模型，例如PR2，DX，Irobot
+Create和TurtleBot，因此即使没有自己的机器人模型，也可以快速上手。它还支持广泛的传感器，并且可以模拟噪声和传感器故障，以准确模拟实际问题。甚至可以在云中运行Gazebo，并使用简单的Web浏览器与模拟器进行交互。如果想在笔记本电脑上工作，这是完美的选择，因为可以租用AWS实例来快速测试和设计机器人</td>
+</tr>
+<tr class="even">
+<td>Gazebo物理引擎：支持ODE、Bullet、Simbody和DART，其默认引擎为ODE</td>
+</tr>
+<tr class="odd">
+<td>Gazebo支持的平台：完美支持Linux、MacOS，Windows需使用源码自行构建</td>
+</tr>
+<tr class="even">
+<td>Gazebo编程接口：最最常用的是通过gazebo_ros_control与ROS建立通信，通信过程已经被封装好了，我们只需要配置文件就可以实现，而当单独使用时可使用==C++==编写控制器插件来完成机器人的动作控制；Gazebo的数据输出是通过topic来实现的，与MATLAB联合仿真时可利用ROS
+Toolbox来实现，其本质还是通过ROS框架作为中介来完成的；与ROS联合仿真时，Gazebo当然是最佳选择，与ROS嵌合如此之深，大概就是新手的误区来源吧~</td>
+</tr>
+<tr class="odd">
+<td>blog.csdn.net/ZhangRelay/article/details/100547011</td>
+</tr>
+<tr class="even">
+<td>## 2、Webots Webots是瑞士
+公司Cyberbotics发布的一种用户友好型机器人模拟仿真器。它可以在Windows，Linux或macOS上运行，并且支持大多数编程语言，例如C/C++，Java，URBI，MATLAB和Python。还可以使用API或任何标准TCP/IP网络从外部控制Webots模拟器。Webots模拟器使用ODE（开放动力引擎）在逼真的3D环境中模拟物理。它还支持对碰撞和接触点进行精确建模，这可以使用虚拟机器人测试各种场景。Webots甚至附带一个机器人模型库，可使用PR2，Atlas，Aibo甚至是某些NASA机器人。Webots还支持VRML97，因此可以使用大多数建模软件（Solidworks，AutoCAD，Blender和Inventor）导入机器人设计。还可以导入地图和地形数据以在测试环境中创建准确的世界表示。</td>
+</tr>
+<tr class="odd">
+<td>Webots物理引擎：基于改进的ODE</td>
+</tr>
+<tr class="even">
+<td>Webots支持的平台：Windows、MacOS、Linux全平台支持</td>
+</tr>
+<tr class="odd">
+<td>Webots编程接口：支持C/C++、Java、Python、MATLAB、ROS以及TCP/IP完成控制器编程，不同的编程语言需要查阅不同的API，函数命名接近但风格不同，ROS通信是通过调用ROS
+API，然后将所使用的语言对应的控制器代码封装成ROS
+topic的形式来完成，自定义ROS控制器时建议使用Python，使用C/C++需要自行构建MakeFile文件，这对于新手而言绝对是个糟糕的选择；R2020版本已经大大简化了ROS的使用过程，当然也可借MATLAB为中介，通过ROS
+Toolbox来实现，这就显得过于繁琐了。如果与Simulink联合仿真，以笔者个人的使用经验来看，建议通过To
+Workspace 和 From Workspace模块来实现，既简单又实用</td>
+</tr>
+<tr class="even">
+<td>（Webots由于刚开源不久，本身处于版本快速迭代期，时常有些小BUG，所以目前来看稳定性是三者中最差的一款仿真器，移动机器人的地表最强仿真软件）</td>
+</tr>
+<tr class="odd">
+<td>blog.csdn.net/ZhangRelay/article/details/100519183</td>
+</tr>
+<tr class="even">
+<td>## 3、V-REP（CoppeliaSim）
+V-REP（现在更新命名为CoppeliaSim）是免费的，用于教育目的，如果计划将其用于商业项目，则可以升级到专业版。可以在Windows，Linux或macOS上运行V-REP，并且可以使用六种不同的编程语言对其进行编程。它还具有ROS＆BlueZero支持，因此可以只使用3D模拟器并使代码在另一个平台上运行。V-REP支持四种不同的物理引擎（Bullet,
+ODE, Newton, and Vortex
+Dynamics）。它可以准确地处理对象的交互，例如碰撞，接触点和抓取。V-REP还支持粒子物理学来模拟空气和水，因此可以准确地对喷气发动机和螺旋桨建模。V-REP还可以模拟各种传感器，甚至可以通过插件将新传感器添加到模拟器。V-REP甚至支持路径和运动规划，甚至可以计算正向和逆向运动学。它还支持网格编辑，因此可以在模拟器中对设计进行小的调整，或者可以轻松导入任何五种不同3D模型格式（Obj，STL，URDF等）的模型</td>
+</tr>
+<tr class="odd">
+<td>V-REP物理引擎：支持Bullet
+2.78、Bullet2.83、ODE、Vortex和Newton，默认引擎为Bullet 2.78</td>
+</tr>
+<tr class="even">
+<td>V-REP支持的平台：Windows、MacOS、Linux全平台支持</td>
+</tr>
+<tr class="odd">
+<td>V-REP编程接口：支持C/C++、Python、Java、Matlab、Octave及ROS，默认使用Lua脚本语言，最大的特点在于，不管使用哪种编程语言，其函数名称几乎一模一样，这大大降低了用户的上手难度，也便于控制器的各种编程语言的转换。它的实现思路是通过Socket来完成的，其中V-REP作为服务器，控制器程序相当于客户端，且访问模式有阻塞式、非阻塞式等四种操作模式，使用时还需仔细弄明白。当然，也可以通过共享内存的方法实现与Simulink的联合仿真</td>
+</tr>
+<tr class="even">
+<td>blog.csdn.net/ZhangRelay/article/details/103353528</td>
+</tr>
+<tr class="odd">
+<td>## 4、NVIDIA ISAAC Platform for Robotics 在NVIDIA
+ISAAC平台是由领先的显卡厂商这也是迅速成为AI行业的大玩家之一的NVIDIA开发。它可以在启用GPU的桌面上运行，也可以在AWS，Google
+Cloud或Azure上的云中运行。它还支持NVIDIA Jetson AGX Xavier，Jetson
+TX2和Jetson
+Nano。由于ISAAC机器人技术平台是由NVIDIA制造的，因此它提供了所有机器人模拟仿真器中最好的图形。它还对更复杂的任务（例如机器学习和数据处理）具有更好的GPU支持。NVIDIA
+ISAAC机器人平台也支持称为GEM的软件模块。这些模块可使开发者快速向机器人添加功能，例如关键字检测，LIDAR，立体视觉和预先训练的神经网络视觉识别系统。ISAAC模拟器还运行在虚幻引擎4的增强版上，虚幻引擎4是一个开放源代码游戏引擎，可为PC和控制台上的某些顶级视频游戏提供支持。NVIDIA
+ISAAC机器人技术平台和虚幻引擎都是开源平台，因此，如果是经验丰富的C++程序员，则可以使用自己的自定义代码来增强其功能。</td>
+</tr>
+<tr class="even">
+<td>## 5、Robot Virtual Worlds Robot Virtual
+Worlds是功能齐全的模拟器，可让用户对虚拟LEGO
+Mindstorms机器人进行编程。它具有免费试用版，或者，如果想使用所有高级选项，则可以升级并支付完整的许可证费用。该模拟器的主要目的是用作教育平台，向年轻人介绍机器人技术的基础知识。它具有内置的3D仿真器，可以在其中构建和测试LEGO机器人，然后在类似游戏的环境中竞争挑战。Robot
+Virtual Worlds还支持使用NXT-G或LabVIEW对LEGO
+Mindstorms机器人进行编程。还可以使用内置扩展系统在模拟器中创建自定义机器人模型或级别。该模拟器对于教师也非常有用，因为“机器人虚拟世界”提供了适合所有年龄和技能水平的学生的课程。教师还可以设置各种机器人竞赛，以在完全虚拟的环境中挑战和评估学生。</td>
+</tr>
+<tr class="odd">
+<td>## 6、Simscape Multibody Simscape 是 Simulink 的一个模块，而
+Simscape Multibody 又是 Simscape 的一个模块</td>
+</tr>
+<tr class="even">
+<td>Simscape Multibody: （前身为 SimMechanics）提供了适用于 3D
+机械系统（例如机器人、汽车悬架、建筑设备和飞机起落架）的多体仿真环境。您可以使用表示刚体、关节、约束、力元件和传感器的模块对多体系统进行建模。Simscape
+Multibody 会建立整个机械系统的运动方程并进行求解。您可将完整的 CAD
+装配件（包括质量、惯性、关节、约束和 3D
+几何结构）导入到模型。您可在自动生成的 3D 动画中查看系统动态。Simscape
+Multibody 可帮助您开发控制系统并测试系统级性能</td>
+</tr>
+<tr class="odd">
+<td>## 付费仿真软件： FANUC ROBOGUIDE ABB RobotStudio RoboDK 物理引擎：
+物理引擎大致可分为两种：一种是以游戏为中心的物理引擎，侧重于实时近似，占用计算资源少，；另一种是用于科学仿真的物理引擎，侧重于精确计算，仿真结果精度高，当然也需要更多的计算资源，比如ADAMS、ANSYS等。</td>
+</tr>
+<tr class="even">
+<td>ODE：开源物理引擎，全称Open Dynamics
+Engine，它是一款模拟刚体动力学的基于C/C++高性能库，功能稳定，常被用于计算机游戏和虚拟现实等技术上；</td>
+</tr>
+<tr class="odd">
+<td>Bullet：开源物理引擎，世界三大物理模拟引擎之一，由C++编写，与ODE相同，被广泛应用与游戏开发、电影制作中；</td>
+</tr>
+<tr class="even">
+<td>Simbody：开源物理引擎，由C++编写，为多体动力学模拟的高性能库；</td>
+</tr>
+<tr class="odd">
+<td>DART：开源物理引擎，全称Dynamic Animation and Robotics
+Toolkit，以准确性和稳定性著称；</td>
+</tr>
+<tr class="even">
+<td>Newton：开源物理引擎，精确的3D物理库，用于物理环境的实时仿真；</td>
+</tr>
+<tr class="odd">
+<td>Vortex：商业物理引擎，由CM-Labs开发，计算精度上可以说是上面介绍这几个物理引擎中的佼佼者，由于这是一款商业物理引擎，因此教育版的V-REP只能用来仿真20秒的过程，对于一些力控算法的验证倒也够用。</td>
+</tr>
+<tr class="even">
+<td>关于不同类型机器人的仿真
+<strong>移动机器人仿真：</strong><font color=red>Webots是最强移动机器人仿真软件；</font></td>
+</tr>
+<tr class="odd">
+<td><strong>机械臂仿真：</strong>Gazebo是神器，上手难度大；Webots可实现一些简单的抓取，如果需要精度高点的动力学仿真，笔者建议食用V-REP；此外还有一些其他的仿真软件，诸如Simscape
+Multibody、Adams等软件，前者可以快速搭建Simulink仿真模型，后者一般机械臂的设计厂商使用较多；</td>
+</tr>
+<tr class="even">
+<td><strong>结合机器学习的仿真：</strong>理论上来讲，任何一款仿真软件都能实现，只不过需要自己整合控制器和机器学习相关API罢了；目前最常用的有PyBullet、MuJoCo等，前者开源，后者商用；</td>
+</tr>
+<tr class="odd">
+<td><strong>水下机器人：</strong><font color=red>Webots只需要添加一个Fluid节点即可实现流体环境的添加；</font></td>
+</tr>
+<tr class="even">
+<td># <a
+target="_blank" rel="noopener" href="http://www.running-robot.net/notice/196.html">Webots专题系列1-软件介绍、安装与演示-v1.1</a></td>
+</tr>
+<tr class="odd">
+<td><a target="_blank" rel="noopener" href="http://www.cyberbotics.com/">Cyberbotics</a></td>
+</tr>
+</tbody>
+</table>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">学习梦想家</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://oceanyouth.github.io/2022/11/22/%E4%B8%B4%E6%97%B6%E5%88%86%E5%8C%BA-2022-11-22-%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%8F%AF%E8%A7%86%E5%8C%96%E4%BB%BF%E7%9C%9F/">https://oceanyouth.github.io/2022/11/22/%E4%B8%B4%E6%97%B6%E5%88%86%E5%8C%BA-2022-11-22-%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%8F%AF%E8%A7%86%E5%8C%96%E4%BB%BF%E7%9C%9F/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://oceanyouth.github.io" target="_blank">漫画世界的漫画家</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="/./img/cover%20(2).jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button button--animated"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/wechat.jpg" target="_blank"><img class="post-qr-code-img" src="/img/wechat.jpg" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="/img/alipay.jpg" target="_blank"><img class="post-qr-code-img" src="/img/alipay.jpg" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/03/12/%E5%AD%A6%E4%B9%A0%E5%88%86%E5%8C%BA-08-%E7%BC%96%E7%A8%8B-2023-03-12-chatGPT/"><img class="prev-cover" src="/./img/cover%20(44).jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">chatGPT</div></div></a></div><div class="next-post pull-right"><a href="/2022/11/15/%E4%B8%B4%E6%97%B6%E5%88%86%E5%8C%BA-2022-11-15-Mathematica/"><img class="next-cover" src="/./img/cover%20(30).jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Mathematica</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="lv-container" data-id="city" data-uid="MTAyMC81NDYxMS8zMTA4Mg=="></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/./img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">学习梦想家</div><div class="author-info__description">少年！在知识的海洋遨游吧！</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">96</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">43</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/oceanyouth"><i class="fab fa-github"></i><span>Into My World</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/oceanyouth" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:18352537966@163.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">记录分享学习与生活！</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2023/10/30/%E4%B8%B4%E6%97%B6%E5%88%86%E5%8C%BA-2023-10-30-%E5%A4%9A%E5%AA%92%E4%BD%93%E6%8A%80%E5%B7%A7/" title="多媒体技巧"><img src="/./img/cover%20(12).jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="多媒体技巧"/></a><div class="content"><a class="title" href="/2023/10/30/%E4%B8%B4%E6%97%B6%E5%88%86%E5%8C%BA-2023-10-30-%E5%A4%9A%E5%AA%92%E4%BD%93%E6%8A%80%E5%B7%A7/" title="多媒体技巧">多媒体技巧</a><time datetime="2023-10-30T11:14:47.000Z" title="发表于 2023-10-30 19:14:47">2023-10-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/10/24/%E4%B8%B4%E6%97%B6%E5%88%86%E5%8C%BA-2023-10-24-VSCode%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/" title="VSCode使用技巧"><img src="/./img/cover%20(10).jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="VSCode使用技巧"/></a><div class="content"><a class="title" href="/2023/10/24/%E4%B8%B4%E6%97%B6%E5%88%86%E5%8C%BA-2023-10-24-VSCode%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/" title="VSCode使用技巧">VSCode使用技巧</a><time datetime="2023-10-24T14:14:38.000Z" title="发表于 2023-10-24 22:14:38">2023-10-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/06/16/%E5%AD%A6%E4%B9%A0%E5%88%86%E5%8C%BA-00-%E7%A7%91%E7%A0%94-2023-06-16-%E5%8D%9A%E6%96%87%E7%9F%A5%E8%AF%86/" title="博文知识"><img src="/./img/cover%20(7).jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="博文知识"/></a><div class="content"><a class="title" href="/2023/06/16/%E5%AD%A6%E4%B9%A0%E5%88%86%E5%8C%BA-00-%E7%A7%91%E7%A0%94-2023-06-16-%E5%8D%9A%E6%96%87%E7%9F%A5%E8%AF%86/" title="博文知识">博文知识</a><time datetime="2023-06-16T03:45:24.000Z" title="发表于 2023-06-16 11:45:24">2023-06-16</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/06/11/%E5%A8%B1%E4%B9%90%E5%88%86%E5%8C%BA-%E5%A4%9A%E5%AA%92%E4%BD%93-2023-06-11-PotPlayer%E6%92%AD%E6%94%BE%E6%8A%96%E9%9F%B3%E7%9B%B4%E6%92%AD/" title="PotPlayer播放抖音直播"><img src="/./img/cover%20(35).jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="PotPlayer播放抖音直播"/></a><div class="content"><a class="title" href="/2023/06/11/%E5%A8%B1%E4%B9%90%E5%88%86%E5%8C%BA-%E5%A4%9A%E5%AA%92%E4%BD%93-2023-06-11-PotPlayer%E6%92%AD%E6%94%BE%E6%8A%96%E9%9F%B3%E7%9B%B4%E6%92%AD/" title="PotPlayer播放抖音直播">PotPlayer播放抖音直播</a><time datetime="2023-06-11T09:40:15.000Z" title="发表于 2023-06-11 17:40:15">2023-06-11</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/06/07/%E4%B8%B4%E6%97%B6%E5%88%86%E5%8C%BA-2023-06-07-SolidWorks-Simscape%E6%8F%92%E4%BB%B6%E5%AE%89%E8%A3%85/" title="SolidWorks_Simscape插件安装"><img src="/./img/cover%20(1).jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="SolidWorks_Simscape插件安装"/></a><div class="content"><a class="title" href="/2023/06/07/%E4%B8%B4%E6%97%B6%E5%88%86%E5%8C%BA-2023-06-07-SolidWorks-Simscape%E6%8F%92%E4%BB%B6%E5%AE%89%E8%A3%85/" title="SolidWorks_Simscape插件安装">SolidWorks_Simscape插件安装</a><time datetime="2023-06-07T06:52:53.000Z" title="发表于 2023-06-07 14:52:53">2023-06-07</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2021 - 2023 By 学习梦想家</div><div class="footer_custom_text">你好，欢迎走进漫画家的世界！</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="font-plus" type="button" title="放大字体"><i class="fas fa-plus"></i></button><button id="font-minus" type="button" title="缩小字体"><i class="fas fa-minus"></i></button><button id="translateLink" type="button" title="简繁转换">简</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>function loadLivere () {
+  if (typeof LivereTower === 'object') {
+    window.LivereTower.init()
+  }
+  else {
+    (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+    })(document, 'script');
+  }
+}
+
+if ('Livere' === 'Livere' || !false) {
+  if (false) btf.loadComment(document.getElementById('lv-container'), loadLivere)
+  else loadLivere()
+}
+else {
+  function loadOtherComment () {
+    loadLivere()
+  }
+}</script></div><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = [
+  'title',
+  '#config-diff',
+  '#body-wrap',
+  '#rightside-config-hide',
+  '#rightside-config-show',
+  '.js-pjax'
+]
+
+if (true) {
+  pjaxSelectors.unshift('meta[property="og:image"]', 'meta[property="og:title"]', 'meta[property="og:url"]')
+}
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.removeEventListener('scroll', window.tocScrollFn)
+  window.removeEventListener('scroll', scrollCollect)
+
+  typeof preloader === 'object' && preloader.initLoading()
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // Analytics
+  if (false) {
+    MtaH5.pgv()
+  }
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+
+  typeof preloader === 'object' && preloader.endLoading()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
