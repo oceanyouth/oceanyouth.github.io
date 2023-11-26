@@ -816,7 +816,7 @@
   </url>
   
   <url>
-    <loc>https://oceanyouth.github.io/tags/MOOC/</loc>
+    <loc>https://oceanyouth.github.io/tags/%E7%BE%BD%E6%AF%9B%E7%90%83%E8%B5%9B/</loc>
     <lastmod>2023-11-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -830,7 +830,7 @@
   </url>
   
   <url>
-    <loc>https://oceanyouth.github.io/tags/%E7%BE%BD%E6%AF%9B%E7%90%83%E8%B5%9B/</loc>
+    <loc>https://oceanyouth.github.io/tags/MOOC/</loc>
     <lastmod>2023-11-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -858,14 +858,14 @@
   </url>
   
   <url>
-    <loc>https://oceanyouth.github.io/tags/%E5%85%AC%E5%BC%8F%E6%8E%92%E7%89%88/</loc>
+    <loc>https://oceanyouth.github.io/tags/%E7%94%B5%E8%84%91%E6%8E%A5%E5%8F%A3/</loc>
     <lastmod>2023-11-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://oceanyouth.github.io/tags/%E7%94%B5%E8%84%91%E6%8E%A5%E5%8F%A3/</loc>
+    <loc>https://oceanyouth.github.io/tags/%E5%85%AC%E5%BC%8F%E6%8E%92%E7%89%88/</loc>
     <lastmod>2023-11-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -907,6 +907,13 @@
   </url>
   
   <url>
+    <loc>https://oceanyouth.github.io/tags/PS/</loc>
+    <lastmod>2023-11-26</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://oceanyouth.github.io/tags/Rufus/</loc>
     <lastmod>2023-11-26</lastmod>
     <changefreq>daily</changefreq>
@@ -922,13 +929,6 @@
   
   <url>
     <loc>https://oceanyouth.github.io/tags/%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E8%BE%A8%E6%9E%90/</loc>
-    <lastmod>2023-11-26</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://oceanyouth.github.io/tags/PS/</loc>
     <lastmod>2023-11-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
