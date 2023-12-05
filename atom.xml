@@ -6,7 +6,7 @@
   <link href="https://oceanyouth.github.io/atom.xml" rel="self"/>
   
   <link href="https://oceanyouth.github.io/"/>
-  <updated>2023-10-30T11:14:47.000Z</updated>
+  <updated>2023-11-28T09:14:39.000Z</updated>
   <id>https://oceanyouth.github.io/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>VSCode使用技巧</title>
+    <link href="https://oceanyouth.github.io/2023/11/28/%E5%AD%A6%E4%B9%A0%E5%88%86%E5%8C%BA-08-%E7%BC%96%E7%A8%8B-2023-11-28-VSCode%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/"/>
+    <id>https://oceanyouth.github.io/2023/11/28/%E5%AD%A6%E4%B9%A0%E5%88%86%E5%8C%BA-08-%E7%BC%96%E7%A8%8B-2023-11-28-VSCode%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/</id>
+    <published>2023-11-28T09:14:39.000Z</published>
+    <updated>2023-11-28T09:14:39.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="vscode高效使用技巧">VSCode高效使用技巧</h1><p><ahref="https://blog.csdn.net/VhWfR2u02Q/article/details/97708248?utm_medium=distribute.pc_relevant.none-task-blog-2~default~baidujs_baidulandingword~default-0-97708248-blog-129173366.235%5Ev38%5Epc_relevant_anti_t3&amp;spm=1001.2101.3001.4242.1&amp;utm_relevant_index=1">21个VSCode 快捷键，让代码更快，更有趣-CSDN博客</a></p><p><ahref="https://blog.csdn.net/ThisEqualThis/article/details/110235558">vscode常用快捷键_vscode中ctrl+t-CSDN博客</a></p><p><ahref="https://www.bilibili.com/video/BV1fy4y1b7TC/?p=14&amp;vd_source=ed137998fd1ae1b4a12558edaa6b34ab">5.3快捷键_哔哩哔哩_bilibili</a></p><p><ahref="https://www.ycpai.cn/python/9nX8T3Vj.html">Vscode怎么实现终端的清屏？vscode清除终端内容的方法- 优草派 (ycpai.cn)</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;vscode高效使用技巧&quot;&gt;VSCode高效使用技巧&lt;/h1&gt;
+&lt;p&gt;&lt;a
+href=&quot;https://blog.csdn.net/VhWfR2u02Q/article/details/97708248?utm_medium=distribute.pc_rel</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>多媒体技巧</title>
@@ -30,29 +52,6 @@
       
     <summary type="html">&lt;p&gt;&lt;a
 href=&quot;https://www.bilibili.com/video/BV1qL411o7TD/?spm_id_from=333.337.search-card.all.click&amp;amp;vd_source=ed137998fd1ae1b4a12558edaa</summary>
-      
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>VSCode使用技巧</title>
-    <link href="https://oceanyouth.github.io/2023/10/24/%E4%B8%B4%E6%97%B6%E5%88%86%E5%8C%BA-2023-10-24-VSCode%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/"/>
-    <id>https://oceanyouth.github.io/2023/10/24/%E4%B8%B4%E6%97%B6%E5%88%86%E5%8C%BA-2023-10-24-VSCode%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/</id>
-    <published>2023-10-24T14:14:38.000Z</published>
-    <updated>2023-10-24T14:14:38.000Z</updated>
-    
-    <content type="html"><![CDATA[<p><ahref="https://www.ycpai.cn/python/9nX8T3Vj.html">Vscode怎么实现终端的清屏？vscode清除终端内容的方法- 优草派 (ycpai.cn)</a></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;&lt;a
-href=&quot;https://www.ycpai.cn/python/9nX8T3Vj.html&quot;&gt;Vscode怎么实现终端的清屏？vscode清除终端内容的方法
-- 优草派 (ycpai.cn)&lt;/a&gt;&lt;/p&gt;
-</summary>
       
     
     
